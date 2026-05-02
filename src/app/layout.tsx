@@ -38,7 +38,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="font-sans bg-navy text-off-white antialiased">
+      <body className="bg-[#080d1a] text-[#f0f4ff] antialiased">
         <Navigation />
         <main>{children}</main>
         <Footer />

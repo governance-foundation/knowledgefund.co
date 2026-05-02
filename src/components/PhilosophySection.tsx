@@ -8,18 +8,19 @@ export default function PhilosophySection() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-24 lg:py-32 bg-[#0a0f1e]">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section ref={ref} className="py-24 lg:py-32" style={{ background: "linear-gradient(180deg, #0e1528 0%, #0a1020 100%)" }}>
+      <div className="section-divider mb-0" />
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-6">
+            <span className="section-label mb-6 inline-flex">
               The philosophy
             </span>
-            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-[#f0f4ff] mb-6 leading-tight">
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#f0f4ff] mb-6 leading-tight">
               Knowledge is a cooperative fund.
             </h2>
             <p className="text-[#8892a4] leading-relaxed mb-6">
