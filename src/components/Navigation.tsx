@@ -65,6 +65,7 @@ export default function Navigation() {
             className="lg:hidden p-2 text-[#8892a4]"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
           >
             <div className="w-5 h-0.5 bg-current mb-1.5 transition-all" />
             <div className="w-5 h-0.5 bg-current mb-1.5 transition-all" />
