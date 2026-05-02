@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0a0f1e;
+  --color-charcoal: #1a2035;
+  --color-off-white: #f0f4ff;
+  --color-soft-grey: #8892a4;
+  --color-blue-accent: #3b82f6;
+  --color-blue-light: #60a5fa;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+:root {
+  --navy: #0a0f1e;
+  --charcoal: #1a2035;
+  --off-white: #f0f4ff;
+  --soft-grey: #8892a4;
+  --blue-accent: #3b82f6;
+  --blue-light: #60a5fa;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--navy);
+  color: var(--off-white);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--blue-accent);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--navy);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--charcoal);
+  border-radius: 3px;
+}
+
+.glass-panel {
+  background: rgba(26, 32, 53, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(96, 165, 250, 0.1);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #f0f4ff 0%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.blue-glow {
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
+}
