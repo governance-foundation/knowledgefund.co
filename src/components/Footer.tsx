@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-const footerLinks = [
+const footerSections = [
   {
     heading: "Product",
     links: [
-      { href: "/model", label: "The Model" },
+      { href: "/model", label: "Model" },
       { href: "/use-cases", label: "Use Cases" },
       { href: "/governance", label: "Governance" },
     ],
@@ -17,34 +17,38 @@ const footerLinks = [
       { href: "/contact", label: "Contact" },
     ],
   },
+  {
+    heading: "Trust",
+    links: [
+      { href: "/governance", label: "SOC 2 Alignment" },
+      { href: "/governance", label: "ISO 27001" },
+      { href: "/governance", label: "AI Safety" },
+    ],
+  },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a0f1e] border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          <div className="md:col-span-2">
-            <span className="text-xl font-bold gradient-text block mb-4">KnowledgeFund</span>
-            <p className="text-[#8892a4] text-sm leading-relaxed max-w-sm">
-              Helping organisations care for their shared knowledge, align their
-              people, and safely automate business work through secure, governed,
-              mission-aligned AI.
+    <footer className="border-t border-white/10 bg-[#09090b]">
+      <div className="kf-container py-14">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+          <div className="lg:col-span-2">
+            <Link href="/" className="kf-display block text-lg font-extrabold uppercase text-white">
+              KnowledgeFund
+            </Link>
+            <p className="mt-4 max-w-sm text-sm leading-6 text-[#8d90a2]">
+              The governed knowledge foundation for organisations that need AI to be useful,
+              secure, accountable, and aligned with the business mission.
             </p>
           </div>
 
-          {footerLinks.map((section) => (
+          {footerSections.map((section) => (
             <div key={section.heading}>
-              <h4 className="text-xs font-semibold uppercase tracking-widest text-[#8892a4] mb-4">
-                {section.heading}
-              </h4>
-              <ul className="space-y-3">
+              <h2 className="kf-mono text-xs font-semibold uppercase text-white">{section.heading}</h2>
+              <ul className="mt-5 space-y-3">
                 {section.links.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-[#8892a4] hover:text-[#f0f4ff] transition-colors"
-                    >
+                  <li key={`${section.heading}-${link.label}`}>
+                    <Link href={link.href} className="text-sm text-[#8d90a2] transition-colors hover:text-white">
                       {link.label}
                     </Link>
                   </li>
@@ -54,13 +58,9 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-[#8892a4]">
-            © {new Date().getFullYear()} KnowledgeFund. All rights reserved.
-          </p>
-          <p className="text-xs text-[#8892a4]">
-            Understand. Agree. Govern. Move in one direction.
-          </p>
+        <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-7 text-xs text-[#8d90a2] md:flex-row md:items-center md:justify-between">
+          <p>© 2026 KnowledgeFund. All rights reserved.</p>
+          <p>Understand. Agree. Govern. Move in one direction.</p>
         </div>
       </div>
     </footer>

@@ -3,62 +3,95 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Use Cases — KnowledgeFund",
-  description: "Practical use cases for KnowledgeFund across professional services, financial services, and enterprise operations.",
+  description: "Practical governed AI use cases across the administrative layer of the business.",
 };
 
 const useCases = [
-  { title: "Onboarding workflows", description: "Automate employee and client onboarding with governed, consistent knowledge-driven processes." },
-  { title: "Policy acknowledgement", description: "Track and manage policy acknowledgements with audit trails and automated follow-ups." },
-  { title: "Client intake & scoping", description: "Streamline client intake processes with structured, knowledge-backed intake workflows." },
-  { title: "Contract review summaries", description: "Generate consistent contract summaries grounded in your organisation's specific knowledge and standards." },
-  { title: "Report generation", description: "Produce governed, consistent reports that draw on structured organisational knowledge." },
-  { title: "Regulatory update tracking", description: "Monitor and integrate regulatory changes into your knowledge base with structured review processes." },
-  { title: "Internal knowledge Q&A", description: "Give staff governed, accurate answers to internal questions — drawn from your maintained knowledge layer." },
-  { title: "Meeting summarisation", description: "Capture, structure, and file meeting outcomes in a way that feeds back into the knowledge fund." },
-  { title: "SOP maintenance", description: "Keep standard operating procedures current, version-controlled, and connected to the automation they govern." },
-  { title: "Approval routing", description: "Route approvals through structured processes with clear accountability and audit trails." },
-  { title: "Staff offboarding", description: "Capture and retain knowledge from departing staff in a structured, governed way." },
-  { title: "Audit preparation", description: "Assemble audit evidence and documentation systematically from your governed knowledge layer." },
+  {
+    title: "Knowledge retrieval",
+    body: "Give staff governed answers from maintained institutional memory instead of scattered drives and inboxes.",
+  },
+  {
+    title: "Document generation",
+    body: "Draft contracts, reports, memos, policies, and client materials from approved organisational knowledge.",
+  },
+  {
+    title: "Pitch and tender prep",
+    body: "Synthesize requirements, prior work, proof points, and win themes with traceable source context.",
+  },
+  {
+    title: "Document review",
+    body: "Review documents for policy alignment, risks, gaps, inconsistencies, and missing approvals.",
+  },
+  {
+    title: "Workflow creation",
+    body: "Orchestrate repeated cross-functional tasks with clear permissions, evidence, and ownership.",
+  },
+  {
+    title: "Reporting",
+    body: "Generate consistent internal and external reports from structured knowledge and governed workflows.",
+  },
+  {
+    title: "System updates",
+    body: "Keep operational records synchronized across legacy platforms without losing accountability.",
+  },
+  {
+    title: "Process automation",
+    body: "Automate repetitive administrative cycles while preserving human oversight for critical work.",
+  },
+  {
+    title: "Audit preparation",
+    body: "Assemble evidence, decision history, and source context from the governed knowledge layer.",
+  },
 ];
 
 export default function UseCasesPage() {
   return (
-    <div className="pt-32 pb-24">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        <div className="mb-16 text-center">
-          <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-6">
-            Use cases
-          </span>
-          <h1 className="text-4xl lg:text-5xl font-bold text-[#f0f4ff] mb-6 leading-tight">
-            The admin layer of the business, made usable.
+    <>
+      <section className="mesh-gradient pt-32 pb-20 lg:pt-40">
+        <div className="kf-container max-w-4xl text-center">
+          <span className="kf-kicker">Use cases</span>
+          <h1 className="kf-display mt-6 text-4xl font-semibold leading-tight text-white md:text-6xl">
+            The admin layer of the business, made governable.
           </h1>
-          <p className="text-xl text-[#8892a4] leading-relaxed max-w-2xl mx-auto">
-            The work that consumes time without building capability. KnowledgeFund makes
-            it automatable, governable, and trustworthy.
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#c3c5d8]">
+            KnowledgeFund focuses on the operational work that consumes time without building
+            capability. It makes that work automatable, accountable, and trustworthy.
           </p>
         </div>
+      </section>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {useCases.map((uc) => (
-            <div key={uc.title} className="glass-panel rounded-xl p-6">
-              <div className="flex items-start gap-3 mb-3">
-                <div className="w-2 h-2 rounded-full bg-blue-400 mt-1.5 flex-shrink-0" />
-                <h2 className="text-base font-semibold text-[#f0f4ff]">{uc.title}</h2>
+      <section className="kf-section technical-grid border-y border-white/10 bg-[#0e0e10]">
+        <div className="kf-container grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {useCases.map((useCase) => (
+            <article key={useCase.title} className="kf-card p-6 transition-colors hover:bg-white/[0.04]">
+              <div className="mb-5 flex items-center gap-3">
+                <div className="h-2 w-2 rounded-full bg-[#2e62ff] shadow-[0_0_16px_rgba(46,98,255,0.8)]" />
+                <h2 className="kf-display text-xl font-semibold text-white">{useCase.title}</h2>
               </div>
-              <p className="text-[#8892a4] text-sm leading-relaxed pl-5">{uc.description}</p>
-            </div>
+              <p className="text-sm leading-6 text-[#c3c5d8]">{useCase.body}</p>
+            </article>
           ))}
         </div>
+      </section>
 
-        <div className="mt-16 text-center">
-          <Link
-            href="/contact"
-            className="inline-block px-8 py-4 rounded-lg bg-[#3b82f6] hover:bg-[#2563eb] text-white font-medium transition-all duration-200 text-sm"
-          >
-            Talk to us about your use case
-          </Link>
+      <section className="kf-section">
+        <div className="kf-container">
+          <div className="kf-card mx-auto max-w-4xl p-8 text-center md:p-12">
+            <span className="kf-kicker">Operational intelligence</span>
+            <h2 className="kf-display mt-5 text-3xl font-semibold text-white md:text-4xl">
+              Start with one workflow. Build a reusable foundation.
+            </h2>
+            <p className="mx-auto mt-5 max-w-2xl leading-7 text-[#c3c5d8]">
+              Each use case strengthens the knowledge fund behind it, so automation compounds
+              capability instead of creating another disconnected tool.
+            </p>
+            <Link href="/contact" className="mt-8 inline-flex rounded-md bg-[#2e62ff] px-7 py-3 text-sm font-bold text-white">
+              Talk to us about your use case
+            </Link>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }

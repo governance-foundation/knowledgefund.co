@@ -3,68 +3,133 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Governance — KnowledgeFund",
-  description: "Security, compliance, and governance in KnowledgeFund — built for regulated environments.",
+  description: "Security, compliance, and governance infrastructure for safe AI adoption.",
 };
+
+const capabilities = [
+  {
+    title: "Role-based access",
+    body: "Granular permission controls so only authorised people and agents can access sensitive knowledge.",
+  },
+  {
+    title: "Audit trails",
+    body: "Every material interaction, change, and automated action can be logged for accountability.",
+  },
+  {
+    title: "Change history",
+    body: "Version control for organisational knowledge, decisions, and policy updates.",
+  },
+  {
+    title: "Source trust and ownership",
+    body: "Trust levels, ownership, and attribution keep AI outputs grounded in approved knowledge.",
+    wide: true,
+  },
+  {
+    title: "Human-in-the-loop",
+    body: "Critical outputs and high-risk workflows can require expert review before action.",
+  },
+];
+
+const standards = ["SOC 2 Type II alignment", "ISO 27001 alignment", "ISO 42001 principles"];
 
 export default function GovernancePage() {
   return (
-    <div className="pt-32 pb-24">
-      <div className="max-w-4xl mx-auto px-6 lg:px-8">
-        <div className="mb-16">
-          <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-6">
-            Security &amp; governance
-          </span>
-          <h1 className="text-4xl lg:text-5xl font-bold text-[#f0f4ff] mb-6 leading-tight">
-            Built for governed AI adoption.
-          </h1>
-          <p className="text-xl text-[#8892a4] leading-relaxed">
-            Governance cannot be added after deployment. It must be built in from the beginning.
-          </p>
-        </div>
+    <>
+      <section className="mesh-gradient pt-32 pb-20 lg:pt-40">
+        <div className="kf-container grid items-center gap-12 lg:grid-cols-2">
+          <div>
+            <span className="kf-kicker">Institutional trust</span>
+            <h1 className="kf-display mt-6 text-4xl font-semibold leading-tight text-white md:text-6xl">
+              Built for governed AI adoption.
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#c3c5d8]">
+              Governance cannot be added after deployment. KnowledgeFund is designed for
+              organisations that need AI to be useful, secure, accountable, and ready for regulated
+              environments from the beginning.
+            </p>
+          </div>
 
-        <div className="space-y-8">
-          {[
-            {
-              title: "SOC 2 Type II alignment",
-              body: "KnowledgeFund is designed to support alignment with SOC 2 Type II requirements for security, availability, and confidentiality. Our knowledge layer and access controls are built with these requirements in mind — not retrofitted to meet them.",
-            },
-            {
-              title: "ISO 27001 alignment",
-              body: "Our information security approach is designed to support alignment with ISO 27001 principles across knowledge handling, access management, and AI deployment. We treat information security as a structural concern, not a compliance exercise.",
-            },
-            {
-              title: "ISO 42001 alignment",
-              body: "As AI management systems become a regulatory expectation, KnowledgeFund is built with ISO 42001 principles in mind — responsible AI deployment with governance, transparency, human oversight, and accountability built into the architecture.",
-            },
-            {
-              title: "Access controls & permissions",
-              body: "Role-based access controls ensure that knowledge is accessible to those who need it and protected from those who do not. Permissions can be structured at the document, category, workflow, and agent level.",
-            },
-            {
-              title: "Audit trails & accountability",
-              body: "Every action taken by AI agents and every change to the knowledge layer is logged. Audit trails provide the evidence needed for internal governance and external compliance requirements.",
-            },
-            {
-              title: "Data residency",
-              body: "For organisations with data residency requirements, KnowledgeFund offers options that allow you to maintain control over where your organisation's knowledge is stored and processed.",
-            },
-          ].map((section) => (
-            <div key={section.title} className="glass-panel rounded-xl p-8">
-              <h2 className="text-xl font-bold text-[#f0f4ff] mb-4">{section.title}</h2>
-              <p className="text-[#8892a4] leading-relaxed">{section.body}</p>
+          <div className="kf-card blue-glow p-5">
+            <div className="rounded-lg border border-white/10 bg-[#09090b]/85 p-5">
+              <p className="kf-mono text-xs uppercase text-[#8d90a2]">Trust architecture</p>
+              <div className="mt-5 grid gap-3">
+                {standards.map((standard) => (
+                  <div key={standard} className="flex items-center justify-between rounded-md bg-white/[0.03] p-4">
+                    <span className="text-sm font-semibold text-white">{standard}</span>
+                    <span className="rounded-full bg-[#2e62ff]/15 px-3 py-1 text-xs text-[#b7c4ff]">Designed in</span>
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
+          </div>
         </div>
+      </section>
 
-        <div className="mt-12 text-center">
-          <Link
-            href="/contact"
-            className="inline-block px-8 py-4 rounded-lg bg-[#3b82f6] hover:bg-[#2563eb] text-white font-medium transition-all duration-200 text-sm"
-          >
-            Discuss your governance requirements
+      <section className="kf-section">
+        <div className="kf-container">
+          <span className="kf-kicker">Core capabilities</span>
+          <h2 className="kf-display mt-5 max-w-3xl text-3xl font-semibold text-white md:text-5xl">
+            Precision governance infrastructure.
+          </h2>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {capabilities.map((capability) => (
+              <article
+                key={capability.title}
+                className={`kf-card p-7 ${capability.wide ? "md:col-span-2" : ""}`}
+              >
+                <div className="mb-6 grid h-12 w-12 place-items-center rounded-md bg-[#2e62ff]/10 text-sm font-bold text-[#b7c4ff]">
+                  KF
+                </div>
+                <h3 className="kf-display text-2xl font-semibold text-white">{capability.title}</h3>
+                <p className="mt-4 leading-7 text-[#c3c5d8]">{capability.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-white/10 bg-[#0e0e10] py-24">
+        <div className="kf-container grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <span className="kf-kicker">System verification</span>
+            <h2 className="kf-display mt-5 text-3xl font-semibold text-white md:text-5xl">
+              Automated evidence capture.
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-[#c3c5d8]">
+              Audit readiness depends on evidence, not promises. KnowledgeFund is shaped around
+              capturing the context, knowledge state, review path, and accountability record behind
+              AI-assisted work.
+            </p>
+          </div>
+
+          <div className="kf-card p-6">
+            <div className="space-y-4">
+              {["Context captured", "Knowledge source linked", "Reviewer recorded", "Decision trace retained"].map(
+                (item, index) => (
+                  <div key={item} className="flex items-center gap-4 rounded-md border border-white/10 bg-white/[0.03] p-4">
+                    <div className="grid h-9 w-9 place-items-center rounded bg-[#2e62ff]/15 text-xs font-bold text-[#b7c4ff]">
+                      {index + 1}
+                    </div>
+                    <span className="font-semibold text-white">{item}</span>
+                  </div>
+                ),
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="kf-section text-center">
+        <div className="kf-container">
+          <h2 className="kf-display text-3xl font-semibold text-white md:text-4xl">
+            Formalise your AI governance before automation scales.
+          </h2>
+          <Link href="/contact" className="mt-8 inline-flex rounded-md bg-[#2e62ff] px-7 py-3 text-sm font-bold text-white">
+            Discuss governance requirements
           </Link>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }

@@ -1,16 +1,14 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { href: "/about", label: "About" },
-  { href: "/model", label: "The Model" },
+  { href: "/model", label: "Model" },
   { href: "/use-cases", label: "Use Cases" },
   { href: "/governance", label: "Governance" },
   { href: "/coordination", label: "Coordination" },
-  { href: "/contact", label: "Contact" },
+  { href: "/about", label: "About" },
 ];
 
 export default function Navigation() {
@@ -18,92 +16,93 @@ export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => setScrolled(window.scrollY > 16);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <motion.header
-      initial={{ y: -20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[#0a0f1e]/90 backdrop-blur-md border-b border-white/5 shadow-lg"
-          : "bg-transparent"
+    <header
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${
+        scrolled || mobileOpen
+          ? "border-white/10 bg-[#09090b]/88 backdrop-blur-xl"
+          : "border-white/5 bg-[#09090b]/62 backdrop-blur-md"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl font-bold gradient-text">KnowledgeFund</span>
+      <div className="kf-container">
+        <div className="flex h-16 items-center justify-between gap-6 lg:h-20">
+          <Link href="/" className="kf-display text-lg font-extrabold uppercase text-white">
+            KnowledgeFund
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden items-center gap-7 lg:flex">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-[#8892a4] hover:text-[#f0f4ff] transition-colors duration-200"
+                className="text-sm font-medium text-[#8d90a2] transition-colors hover:text-white"
               >
                 {link.label}
               </Link>
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden items-center gap-3 lg:flex">
             <Link
               href="/contact"
-              className="px-5 py-2.5 rounded-lg bg-[#3b82f6] hover:bg-[#2563eb] text-white text-sm font-medium transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/25"
+              className="rounded-md border border-white/10 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/5"
             >
-              Get Early Access
+              Contact
+            </Link>
+            <Link
+              href="/contact"
+              className="rounded-md bg-[#2e62ff] px-5 py-2 text-sm font-semibold text-white transition-all hover:bg-[#2453e8] hover:shadow-[0_0_24px_rgba(46,98,255,0.32)]"
+            >
+              Get Started
             </Link>
           </div>
 
           <button
-            className="lg:hidden p-2 text-[#8892a4]"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
+            type="button"
+            className="grid h-10 w-10 place-items-center rounded-md border border-white/10 text-[#c3c5d8] lg:hidden"
+            onClick={() => setMobileOpen((open) => !open)}
             aria-expanded={mobileOpen}
+            aria-controls="mobile-navigation"
+            aria-label="Toggle navigation"
           >
-            <div className="w-5 h-0.5 bg-current mb-1.5 transition-all" />
-            <div className="w-5 h-0.5 bg-current mb-1.5 transition-all" />
-            <div className="w-5 h-0.5 bg-current transition-all" />
+            <span className="flex flex-col gap-1.5">
+              <span className="h-px w-5 bg-current" />
+              <span className="h-px w-5 bg-current" />
+              <span className="h-px w-5 bg-current" />
+            </span>
           </button>
         </div>
       </div>
 
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-[#1a2035]/95 backdrop-blur-md border-b border-white/5"
-          >
-            <div className="px-6 py-4 flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm text-[#8892a4] hover:text-[#f0f4ff] py-2 transition-colors"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
+      {mobileOpen && (
+        <nav id="mobile-navigation" className="border-t border-white/10 bg-[#09090b]/96 lg:hidden">
+          <div className="kf-container flex flex-col gap-1 py-4">
+            {navLinks.map((link) => (
               <Link
-                href="/contact"
-                className="px-5 py-2.5 rounded-lg bg-[#3b82f6] text-white text-sm font-medium text-center mt-2"
+                key={link.href}
+                href={link.href}
+                className="rounded-md px-2 py-3 text-sm font-medium text-[#c3c5d8] hover:bg-white/5 hover:text-white"
                 onClick={() => setMobileOpen(false)}
               >
-                Get Early Access
+                {link.label}
               </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.header>
+            ))}
+            <Link
+              href="/contact"
+              className="mt-2 rounded-md bg-[#2e62ff] px-4 py-3 text-center text-sm font-semibold text-white"
+              onClick={() => setMobileOpen(false)}
+            >
+              Get Started
+            </Link>
+          </div>
+        </nav>
+      )}
+    </header>
   );
 }
