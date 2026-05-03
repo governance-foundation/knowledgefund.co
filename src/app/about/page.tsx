@@ -3,59 +3,92 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About — KnowledgeFund",
-  description: "The philosophy behind KnowledgeFund and why we built it.",
+  description: "The philosophy behind KnowledgeFund and why governed knowledge matters for AI adoption.",
 };
+
+const pillars = [
+  {
+    title: "Understand",
+    label: "Access to knowledge",
+    body: "Break down silos by making institutional memory visible, structured, and usable by the people and systems that need it.",
+  },
+  {
+    title: "Agree",
+    label: "Shared view of work",
+    body: "Create a common view of what has been decided, what matters, and how the organisation intends to act.",
+  },
+  {
+    title: "Move in one direction",
+    label: "Autonomous alignment",
+    body: "Enable teams and AI agents to act with confidence because the operating context is governed and maintained.",
+  },
+];
 
 export default function AboutPage() {
   return (
-    <div className="pt-32 pb-24">
-      <div className="max-w-4xl mx-auto px-6 lg:px-8">
-        <div className="mb-16">
-          <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-6">
-            Our philosophy
-          </span>
-          <h1 className="text-4xl lg:text-5xl font-bold text-[#f0f4ff] mb-6 leading-tight">
-            Knowledge is a cooperative fund.
+    <>
+      <section className="mesh-gradient pt-32 pb-20 lg:pt-40">
+        <div className="kf-container max-w-4xl text-center">
+          <span className="kf-kicker">Unified intelligence</span>
+          <h1 className="kf-display mt-6 text-4xl font-semibold leading-tight text-white md:text-6xl">
+            Help your organisation understand, agree, and move in one direction.
           </h1>
-          <p className="text-xl text-[#8892a4] leading-relaxed">
-            Most organisations know more than they use. KnowledgeFund is built on the
-            belief that this is not a technology problem — it is a governance problem.
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#c3c5d8]">
+            KnowledgeFund is built on a simple belief: most organisations know more than they use.
+            The missing layer is not another tool. It is governed knowledge.
           </p>
         </div>
+      </section>
 
-        <div className="space-y-10">
-          {[
-            {
-              heading: "Why we built this",
-              body: "Organisations are spending heavily on AI tools without building the foundation those tools require. The result is faster movement in an unclear direction — which is not progress, it is acceleration without governance. We built KnowledgeFund to address the root cause: organisations do not have a cared-for, governed, mission-aligned knowledge layer.",
-            },
-            {
-              heading: "What we believe",
-              body: "We believe that knowledge, treated as a cooperative fund — contributed to, maintained, and drawn upon collectively — is the primary asset of any organisation. Not its people alone, not its systems alone, but the shared knowledge that allows people and systems to work together effectively.",
-            },
-            {
-              heading: "Who we build for",
-              body: "We build for organisations that are serious about AI adoption but refuse to move recklessly. Legal firms, financial services organisations, professional services businesses, government agencies, and any enterprise that needs AI to be genuinely useful, genuinely secure, and genuinely accountable.",
-            },
-          ].map((section) => (
-            <div key={section.heading} className="glass-panel rounded-xl p-8">
-              <h2 className="text-xl font-bold text-[#f0f4ff] mb-4">
-                {section.heading}
-              </h2>
-              <p className="text-[#8892a4] leading-relaxed">{section.body}</p>
-            </div>
+      <section className="kf-section">
+        <div className="kf-container grid gap-5 md:grid-cols-3">
+          {pillars.map((pillar) => (
+            <article key={pillar.title} className="kf-card flex flex-col p-7">
+              <h2 className="kf-display text-3xl font-semibold text-white">{pillar.title}</h2>
+              <p className="mt-4 flex-1 leading-7 text-[#c3c5d8]">{pillar.body}</p>
+              <div className="mt-8 border-t border-white/10 pt-5">
+                <p className="kf-mono text-xs uppercase text-[#b7c4ff]">{pillar.label}</p>
+              </div>
+            </article>
           ))}
         </div>
+      </section>
 
-        <div className="mt-12 text-center">
-          <Link
-            href="/contact"
-            className="inline-block px-8 py-4 rounded-lg bg-[#3b82f6] hover:bg-[#2563eb] text-white font-medium transition-all duration-200 text-sm"
-          >
+      <section className="border-y border-white/10 bg-[#0e0e10] py-24">
+        <div className="kf-container grid gap-12 lg:grid-cols-2">
+          <div>
+            <span className="kf-kicker">Why we built this</span>
+            <h2 className="kf-display mt-5 text-3xl font-semibold text-white md:text-5xl">
+              AI needs more than acceleration.
+            </h2>
+          </div>
+          <div className="space-y-6 text-lg leading-8 text-[#c3c5d8]">
+            <p>
+              Organisations are investing heavily in AI tools before building the foundation those
+              tools require. The result is faster movement in an unclear direction.
+            </p>
+            <p>
+              KnowledgeFund addresses the root cause: organisations need a cared-for, governed,
+              mission-aligned knowledge layer before automation can be trusted.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="kf-section">
+        <div className="kf-container text-center">
+          <h2 className="kf-display text-3xl font-semibold text-white md:text-4xl">
+            Knowledge is a cooperative fund.
+          </h2>
+          <p className="mx-auto mt-5 max-w-2xl leading-7 text-[#c3c5d8]">
+            Contributed to, maintained, and drawn upon collectively, shared knowledge becomes the
+            asset that lets people and AI systems work together effectively.
+          </p>
+          <Link href="/contact" className="mt-8 inline-flex rounded-md bg-[#2e62ff] px-7 py-3 text-sm font-bold text-white">
             Talk to us
           </Link>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }

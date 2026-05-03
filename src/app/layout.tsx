@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://knowledgefund.co"),
   title: "KnowledgeFund — Secure, governed, mission-aligned AI automation",
   description:
     "KnowledgeFund helps organisations care for their shared knowledge, align their people, and safely automate business work through secure, governed, mission-aligned AI.",
@@ -38,7 +39,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-[#080d1a] text-[#f0f4ff] antialiased">
+      <body>
         <Navigation />
         <main>{children}</main>
         <Footer />
