@@ -27,13 +27,13 @@ const pillars = [
 export default function AboutPage() {
   return (
     <>
-      <section className="mesh-gradient pt-32 pb-20 lg:pt-40">
+      <section className="mesh-gradient bg-technical-gradient pt-32 pb-20 lg:pt-40">
         <div className="kf-container max-w-4xl text-center">
           <span className="kf-kicker">Unified intelligence</span>
           <h1 className="kf-display mt-6 text-4xl font-semibold leading-tight text-white md:text-6xl">
             Help your organisation understand, agree, and move in one direction.
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#c3c5d8]">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-400">
             KnowledgeFund is built on a simple belief: most organisations know more than they use.
             The missing layer is not another tool. It is governed knowledge.
           </p>
@@ -45,7 +45,7 @@ export default function AboutPage() {
           {pillars.map((pillar) => (
             <article key={pillar.title} className="kf-card flex flex-col p-7">
               <h2 className="kf-display text-3xl font-semibold text-white">{pillar.title}</h2>
-              <p className="mt-4 flex-1 leading-7 text-[#c3c5d8]">{pillar.body}</p>
+              <p className="mt-4 flex-1 leading-7 text-slate-400">{pillar.body}</p>
               <div className="mt-8 border-t border-white/10 pt-5">
                 <p className="kf-mono text-xs uppercase text-[#b7c4ff]">{pillar.label}</p>
               </div>
@@ -62,7 +62,7 @@ export default function AboutPage() {
               AI needs more than acceleration.
             </h2>
           </div>
-          <div className="space-y-6 text-lg leading-8 text-[#c3c5d8]">
+          <div className="space-y-6 text-lg leading-8 text-slate-400">
             <p>
               Organisations are investing heavily in AI tools before building the foundation those
               tools require. The result is faster movement in an unclear direction.
@@ -80,7 +80,7 @@ export default function AboutPage() {
           <h2 className="kf-display text-3xl font-semibold text-white md:text-4xl">
             Knowledge is a cooperative fund.
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl leading-7 text-[#c3c5d8]">
+          <p className="mx-auto mt-5 max-w-2xl leading-7 text-slate-400">
             Contributed to, maintained, and drawn upon collectively, shared knowledge becomes the
             asset that lets people and AI systems work together effectively.
           </p>

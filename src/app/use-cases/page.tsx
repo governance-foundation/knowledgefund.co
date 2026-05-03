@@ -48,13 +48,13 @@ const useCases = [
 export default function UseCasesPage() {
   return (
     <>
-      <section className="mesh-gradient pt-32 pb-20 lg:pt-40">
+      <section className="mesh-gradient bg-technical-gradient pt-32 pb-20 lg:pt-40">
         <div className="kf-container max-w-4xl text-center">
           <span className="kf-kicker">Use cases</span>
           <h1 className="kf-display mt-6 text-4xl font-semibold leading-tight text-white md:text-6xl">
             The admin layer of the business, made governable.
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#c3c5d8]">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-400">
             KnowledgeFund focuses on the operational work that consumes time without building
             capability. It makes that work automatable, accountable, and trustworthy.
           </p>
@@ -69,7 +69,7 @@ export default function UseCasesPage() {
                 <div className="h-2 w-2 rounded-full bg-[#2e62ff] shadow-[0_0_16px_rgba(46,98,255,0.8)]" />
                 <h2 className="kf-display text-xl font-semibold text-white">{useCase.title}</h2>
               </div>
-              <p className="text-sm leading-6 text-[#c3c5d8]">{useCase.body}</p>
+              <p className="text-sm leading-6 text-slate-400">{useCase.body}</p>
             </article>
           ))}
         </div>
@@ -82,7 +82,7 @@ export default function UseCasesPage() {
             <h2 className="kf-display mt-5 text-3xl font-semibold text-white md:text-4xl">
               Start with one workflow. Build a reusable foundation.
             </h2>
-            <p className="mx-auto mt-5 max-w-2xl leading-7 text-[#c3c5d8]">
+            <p className="mx-auto mt-5 max-w-2xl leading-7 text-slate-400">
               Each use case strengthens the knowledge fund behind it, so automation compounds
               capability instead of creating another disconnected tool.
             </p>

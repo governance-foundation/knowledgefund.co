@@ -31,13 +31,13 @@ const stakes = [
 export default function CoordinationPage() {
   return (
     <>
-      <section className="mesh-gradient pt-32 pb-20 lg:pt-40">
+      <section className="mesh-gradient bg-technical-gradient pt-32 pb-20 lg:pt-40">
         <div className="kf-container max-w-4xl">
           <span className="kf-kicker">The coordination problem</span>
           <h1 className="kf-display mt-6 text-4xl font-semibold leading-tight text-white md:text-6xl">
             AI makes coordination the business problem that can no longer be ignored.
           </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-[#c3c5d8]">
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-400">
             Organisations have always struggled with coordination. AI does not automatically solve
             this problem. Without a governed foundation, it accelerates it.
           </p>
@@ -49,7 +49,7 @@ export default function CoordinationPage() {
           {sections.map((section) => (
             <article key={section.title} className="kf-card p-7">
               <h2 className="kf-display text-2xl font-semibold text-white">{section.title}</h2>
-              <p className="mt-4 leading-7 text-[#c3c5d8]">{section.body}</p>
+              <p className="mt-4 leading-7 text-slate-400">{section.body}</p>
             </article>
           ))}
         </div>
@@ -62,7 +62,7 @@ export default function CoordinationPage() {
             <h2 className="kf-display mt-5 text-3xl font-semibold text-white md:text-5xl">
               Faster movement in an unclear direction is not progress.
             </h2>
-            <p className="mt-6 text-lg leading-8 text-[#c3c5d8]">
+            <p className="mt-6 text-lg leading-8 text-slate-400">
               An AI agent acting on fragmented or ungoverned knowledge can produce inconsistency,
               error, and compliance risk at scale. The coordination problem becomes a governance
               problem.
@@ -73,7 +73,7 @@ export default function CoordinationPage() {
             {stakes.map((stake, index) => (
               <div key={stake} className="kf-card flex items-start gap-4 p-5">
                 <span className="kf-mono text-sm text-[#b7c4ff]">0{index + 1}</span>
-                <p className="leading-7 text-[#c3c5d8]">{stake}</p>
+                <p className="leading-7 text-slate-400">{stake}</p>
               </div>
             ))}
           </div>
@@ -86,7 +86,7 @@ export default function CoordinationPage() {
             <h2 className="kf-display text-3xl font-semibold text-white md:text-4xl">
               The solution is a governed knowledge foundation.
             </h2>
-            <p className="mx-auto mt-5 max-w-2xl leading-7 text-[#c3c5d8]">
+            <p className="mx-auto mt-5 max-w-2xl leading-7 text-slate-400">
               A single maintained layer for what the organisation knows, what it has decided, and
               how it intends to act. From there, communication becomes clear, collaboration becomes
               effective, and coordination becomes achievable.

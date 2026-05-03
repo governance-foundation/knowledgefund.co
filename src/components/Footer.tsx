@@ -29,14 +29,14 @@ const footerSections = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#09090b]">
+    <footer className="border-t border-white-fade bg-slate-950">
       <div className="kf-container py-14">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <Link href="/" className="kf-display block text-lg font-extrabold uppercase text-white">
               KnowledgeFund
             </Link>
-            <p className="mt-4 max-w-sm text-sm leading-6 text-[#8d90a2]">
+            <p className="mt-4 max-w-sm text-sm leading-6 text-slate-500">
               The governed knowledge foundation for organisations that need AI to be useful,
               secure, accountable, and aligned with the business mission.
             </p>
@@ -48,7 +48,7 @@ export default function Footer() {
               <ul className="mt-5 space-y-3">
                 {section.links.map((link) => (
                   <li key={`${section.heading}-${link.label}`}>
-                    <Link href={link.href} className="text-sm text-[#8d90a2] transition-colors hover:text-white">
+                    <Link href={link.href} className="text-sm text-slate-500 transition-colors hover:text-white">
                       {link.label}
                     </Link>
                   </li>
@@ -58,7 +58,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-7 text-xs text-[#8d90a2] md:flex-row md:items-center md:justify-between">
+        <div className="mt-12 flex flex-col gap-3 border-t border-white-fade pt-7 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
           <p>© 2026 KnowledgeFund. All rights reserved.</p>
           <p>Understand. Agree. Govern. Move in one direction.</p>
         </div>

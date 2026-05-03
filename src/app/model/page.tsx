@@ -44,14 +44,14 @@ const adminCapabilities = [
 export default function ModelPage() {
   return (
     <>
-      <section className="mesh-gradient pt-32 pb-20 lg:pt-40">
+      <section className="mesh-gradient bg-technical-gradient pt-32 pb-20 lg:pt-40">
         <div className="kf-container grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <span className="kf-kicker">The model</span>
             <h1 className="kf-display mt-6 max-w-3xl text-4xl font-semibold leading-tight text-white md:text-6xl">
               From scattered knowledge to governed capability.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#c3c5d8]">
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-400">
               KnowledgeFund gives organisations a repeatable lifecycle for turning latent information
               into high-velocity operational intelligence without losing control.
             </p>
@@ -59,7 +59,7 @@ export default function ModelPage() {
 
           <div className="kf-card blue-glow p-5">
             <div className="rounded-lg border border-white/10 bg-[#09090b]/80 p-5">
-              <p className="kf-mono text-xs uppercase text-[#8d90a2]">Governance lifecycle</p>
+              <p className="kf-mono text-xs uppercase text-slate-500">Governance lifecycle</p>
               <div className="mt-5 space-y-3">
                 {steps.map((step, index) => (
                   <div key={step.title} className="flex items-center gap-4">
@@ -99,9 +99,9 @@ export default function ModelPage() {
                 key={step.title}
                 className={`kf-card p-6 ${step.featured ? "border-[#2e62ff]/60 bg-[#2e62ff]/10" : ""}`}
               >
-                <p className="kf-mono text-xs uppercase text-[#8d90a2]">0{index + 1}</p>
+                <p className="kf-mono text-xs uppercase text-slate-500">0{index + 1}</p>
                 <h3 className="kf-display mt-5 text-2xl font-semibold text-white">{step.title}</h3>
-                <p className="mt-4 text-sm leading-6 text-[#c3c5d8]">{step.body}</p>
+                <p className="mt-4 text-sm leading-6 text-slate-400">{step.body}</p>
               </article>
             ))}
           </div>
@@ -115,7 +115,7 @@ export default function ModelPage() {
             <h2 className="kf-display mt-5 text-3xl font-semibold text-white md:text-5xl">
               The admin layer of the business.
             </h2>
-            <p className="mt-6 text-lg leading-8 text-[#c3c5d8]">
+            <p className="mt-6 text-lg leading-8 text-slate-400">
               The model is not abstract. It makes the repeated administrative work of the business
               automatable, governable, and accountable.
             </p>
@@ -128,7 +128,7 @@ export default function ModelPage() {
                   KF
                 </div>
                 <h3 className="kf-display text-xl font-semibold text-white">{capability}</h3>
-                <p className="mt-3 text-sm leading-6 text-[#c3c5d8]">
+                <p className="mt-3 text-sm leading-6 text-slate-400">
                   Governed workflows backed by maintained organisational knowledge.
                 </p>
               </article>

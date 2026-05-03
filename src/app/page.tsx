@@ -32,7 +32,7 @@ function InterfacePreview() {
       <div className="relative rounded-lg border border-white/10 bg-[#09090b]/80 p-5">
         <div className="mb-6 flex items-center justify-between border-b border-white/10 pb-4">
           <div>
-            <p className="kf-mono text-[10px] uppercase text-[#8d90a2]">Network state</p>
+            <p className="kf-mono text-[10px] uppercase text-slate-500">Network state</p>
             <p className="mt-1 text-sm font-semibold text-white">Mission alignment active</p>
           </div>
           <div className="rounded-full bg-[#2e62ff]/15 px-3 py-1 text-xs font-semibold text-[#b7c4ff]">
@@ -85,7 +85,7 @@ function InterfacePreview() {
 export default function Home() {
   return (
     <>
-      <section className="mesh-gradient pt-32 pb-20 lg:pt-40 lg:pb-28">
+      <section className="mesh-gradient bg-technical-gradient pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="kf-container grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <span className="kf-kicker">Sovereign intelligence engine</span>
@@ -93,7 +93,7 @@ export default function Home() {
               Turn organisational knowledge into{" "}
               <span className="kf-text-gradient">secure, governed, mission-aligned action.</span>
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-[#c3c5d8]">
+            <p className="mt-6 max-w-xl text-lg leading-8 text-slate-400">
               KnowledgeFund helps organisations care for their shared knowledge, align their people,
               and safely automate the work that keeps the business moving.
             </p>
@@ -118,11 +118,11 @@ export default function Home() {
       </section>
 
       <section className="border-y border-white/10 bg-[#09090b] py-8">
-        <div className="kf-container flex flex-col gap-5 text-[#8d90a2] md:flex-row md:items-center md:justify-between">
+        <div className="kf-container flex flex-col gap-5 text-slate-500 md:flex-row md:items-center md:justify-between">
           <p className="kf-mono text-xs uppercase">Designed for institutions requiring</p>
           <div className="flex flex-wrap gap-3">
             {trustItems.map((item) => (
-              <span key={item} className="rounded-full border border-white/10 px-4 py-2 text-xs font-semibold text-[#c3c5d8]">
+              <span key={item} className="rounded-full border border-white/10 px-4 py-2 text-xs font-semibold text-slate-400">
                 {item}
               </span>
             ))}
@@ -137,7 +137,7 @@ export default function Home() {
             <h2 className="kf-display mt-5 text-3xl font-semibold text-white md:text-5xl">
               The Coordination Problem
             </h2>
-            <p className="mt-5 text-lg leading-8 text-[#c3c5d8]">
+            <p className="mt-5 text-lg leading-8 text-slate-400">
               AI makes coordination the business problem that can no longer be ignored. As automation
               accelerates work, alignment becomes the difference between capability and risk.
             </p>
@@ -147,7 +147,7 @@ export default function Home() {
             {coordinationCards.map((card) => (
               <article key={card.title} className={`kf-card p-7 ${card.span}`}>
                 <h3 className="kf-display text-2xl font-semibold text-white">{card.title}</h3>
-                <p className="mt-4 leading-7 text-[#c3c5d8]">{card.body}</p>
+                <p className="mt-4 leading-7 text-slate-400">{card.body}</p>
               </article>
             ))}
           </div>
@@ -159,7 +159,7 @@ export default function Home() {
           <h2 className="kf-display text-3xl font-semibold text-white md:text-5xl">
             Knowledge is a cooperative fund.
           </h2>
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-[#c3c5d8]">
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-400">
             When organisational knowledge is siloed, its value depreciates. When it is pooled,
             governed, maintained, and accessible to secure AI agents, it becomes an asset the whole
             organisation can draw from.
@@ -173,7 +173,7 @@ export default function Home() {
             <h2 className="kf-display text-3xl font-semibold text-white md:text-4xl">
               Ready to govern your future?
             </h2>
-            <p className="mx-auto mt-5 max-w-2xl leading-7 text-[#c3c5d8]">
+            <p className="mx-auto mt-5 max-w-2xl leading-7 text-slate-400">
               Build a foundation of secure, mission-aligned organisational intelligence before
               automation scales the work.
             </p>

@@ -35,14 +35,14 @@ const standards = ["SOC 2 Type II alignment", "ISO 27001 alignment", "ISO 42001 
 export default function GovernancePage() {
   return (
     <>
-      <section className="mesh-gradient pt-32 pb-20 lg:pt-40">
+      <section className="mesh-gradient bg-technical-gradient pt-32 pb-20 lg:pt-40">
         <div className="kf-container grid items-center gap-12 lg:grid-cols-2">
           <div>
             <span className="kf-kicker">Institutional trust</span>
             <h1 className="kf-display mt-6 text-4xl font-semibold leading-tight text-white md:text-6xl">
               Built for governed AI adoption.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#c3c5d8]">
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-400">
               Governance cannot be added after deployment. KnowledgeFund is designed for
               organisations that need AI to be useful, secure, accountable, and ready for regulated
               environments from the beginning.
@@ -51,7 +51,7 @@ export default function GovernancePage() {
 
           <div className="kf-card blue-glow p-5">
             <div className="rounded-lg border border-white/10 bg-[#09090b]/85 p-5">
-              <p className="kf-mono text-xs uppercase text-[#8d90a2]">Trust architecture</p>
+              <p className="kf-mono text-xs uppercase text-slate-500">Trust architecture</p>
               <div className="mt-5 grid gap-3">
                 {standards.map((standard) => (
                   <div key={standard} className="flex items-center justify-between rounded-md bg-white/[0.03] p-4">
@@ -82,7 +82,7 @@ export default function GovernancePage() {
                   KF
                 </div>
                 <h3 className="kf-display text-2xl font-semibold text-white">{capability.title}</h3>
-                <p className="mt-4 leading-7 text-[#c3c5d8]">{capability.body}</p>
+                <p className="mt-4 leading-7 text-slate-400">{capability.body}</p>
               </article>
             ))}
           </div>
@@ -96,7 +96,7 @@ export default function GovernancePage() {
             <h2 className="kf-display mt-5 text-3xl font-semibold text-white md:text-5xl">
               Automated evidence capture.
             </h2>
-            <p className="mt-6 text-lg leading-8 text-[#c3c5d8]">
+            <p className="mt-6 text-lg leading-8 text-slate-400">
               Audit readiness depends on evidence, not promises. KnowledgeFund is shaped around
               capturing the context, knowledge state, review path, and accountability record behind
               AI-assisted work.

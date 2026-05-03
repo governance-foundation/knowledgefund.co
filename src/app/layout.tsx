@@ -1,7 +1,28 @@
 import type { Metadata } from "next";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+});
+
+const themeScript = `
+(() => {
+  try {
+    const preference = localStorage.getItem("kf-theme") || "system";
+    const systemLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+    const theme = preference === "system" ? (systemLight ? "light" : "dark") : preference;
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.dataset.themePreference = preference;
+  } catch {
+    document.documentElement.dataset.theme = "dark";
+    document.documentElement.dataset.themePreference = "system";
+  }
+})();
+`;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://knowledgefund.co"),
@@ -38,8 +59,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" className={manrope.variable} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
+      <body className="font-manrope">
         <Navigation />
         <main>{children}</main>
         <Footer />
