@@ -7,5 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function GovernancePage() {
-  return <StitchHtmlPage page="ai_governance_trust_architecture" />;
+  return <StitchHtmlPage activePage="governance" page="ai_governance_trust_architecture" />;
 }

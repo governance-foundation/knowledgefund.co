@@ -1,5 +1,11 @@
 import StitchHtmlPage from "@/lib/stitch-html";
 
 export default function Home() {
-  return <StitchHtmlPage page="knowledge_fund_strategic_home" />;
+  return (
+    <StitchHtmlPage
+      activePage="platform"
+      localImages={["/stitch-redesign/organisasational-intelligence.png", "/stitch-redesign/knowledgefund.png"]}
+      page="platform"
+    />
+  );
 }
