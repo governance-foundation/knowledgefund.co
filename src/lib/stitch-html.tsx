@@ -29,8 +29,6 @@ const footerLinks = [
   { href: "mailto:knowledgefund@gmail.com", label: "Contact" },
 ];
 
-const basePath = process.env.GITHUB_PAGES_BASE_PATH?.replace(/\/$/, "") ?? "";
-
 function escapeRegExp(value: string) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
@@ -46,32 +44,37 @@ function splitUrlSuffix(value: string) {
   return { hash, pathName, query };
 }
 
-function withBasePath(value: string, attributeName: string) {
-  if (
-    !basePath ||
-    !value.startsWith("/") ||
-    value.startsWith("//") ||
-    value === basePath ||
-    value.startsWith(`${basePath}/`)
-  ) {
+function getRelativePrefix(page: string) {
+  return page === "platform" ? "" : "../";
+}
+
+function toPageRelativeUrl(value: string, attributeName: string, page: string) {
+  if (!value.startsWith("/") || value.startsWith("//")) {
     return value;
   }
 
+  const relativePrefix = getRelativePrefix(page);
+
   if (attributeName !== "href") {
-    return `${basePath}${value}`;
+    return `${relativePrefix}${value.slice(1)}`;
   }
 
   const { hash, pathName, query } = splitUrlSuffix(value);
-  const routePath = pathName === "/" ? `${basePath}/` : `${basePath}${pathName}`;
   const hasFileExtension = /\.[a-z0-9]+$/i.test(pathName);
-  const normalizedRoutePath = hasFileExtension || routePath.endsWith("/") ? routePath : `${routePath}/`;
+
+  if (pathName === "/") {
+    return `${relativePrefix || "./"}${query}${hash}`;
+  }
+
+  const relativePath = `${relativePrefix}${pathName.slice(1)}`;
+  const normalizedRoutePath = hasFileExtension || relativePath.endsWith("/") ? relativePath : `${relativePath}/`;
 
   return `${normalizedRoutePath}${query}${hash}`;
 }
 
-function prefixRootRelativeUrls(body: string) {
+function makeRootUrlsRelative(body: string, page: string) {
   return body.replace(/\b(href|src)="(\/[^"]*)"/g, (_match, attributeName: string, value: string) => {
-    return `${attributeName}="${withBasePath(value, attributeName)}"`;
+    return `${attributeName}="${toPageRelativeUrl(value, attributeName, page)}"`;
   });
 }
 
@@ -186,7 +189,7 @@ function getStitchBody(
   const pageStyles = getPageStyles(html);
   const bodyMarkup = normalizeFooterLinks(normalizeNav(replaceImages(body, localImages, tintedImageIndexes), activePage));
 
-  return prefixRootRelativeUrls(`${pageStyles}\n${bodyMarkup}`);
+  return makeRootUrlsRelative(`${pageStyles}\n${bodyMarkup}`, page);
 }
 
 export default function StitchHtmlPage({ activePage, localImages, page, tintedImageIndexes }: StitchHtmlPageProps) {
