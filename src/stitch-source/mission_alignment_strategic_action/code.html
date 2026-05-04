@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#1c1b1d",
+                        "surface": "#131315",
+                        "outline": "#8d90a2",
+                        "secondary": "#bec6e0",
+                        "tertiary-container": "#707171",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-primary-fixed-variant": "#0039b5",
+                        "on-primary-fixed": "#001552",
+                        "background": "#131315",
+                        "surface-container-highest": "#353437",
+                        "on-secondary": "#283044",
+                        "on-secondary-container": "#adb4ce",
+                        "on-background": "#e5e1e4",
+                        "surface-container-lowest": "#0e0e10",
+                        "primary-container": "#2e62ff",
+                        "primary": "#b7c4ff",
+                        "outline-variant": "#434656",
+                        "surface-tint": "#b7c4ff",
+                        "inverse-surface": "#e5e1e4",
+                        "primary-fixed": "#dce1ff",
+                        "surface-dim": "#131315",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface-container-high": "#2a2a2c",
+                        "on-tertiary": "#2f3131",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "tertiary": "#c6c6c7",
+                        "surface-container": "#201f22",
+                        "on-surface": "#e5e1e4",
+                        "on-secondary-fixed": "#131b2e",
+                        "secondary-fixed": "#dae2fd",
+                        "inverse-on-surface": "#313032",
+                        "on-tertiary-container": "#f6f7f7",
+                        "on-error-container": "#ffdad6",
+                        "on-error": "#690005",
+                        "on-primary": "#002682",
+                        "surface-variant": "#353437",
+                        "error": "#ffb4ab",
+                        "error-container": "#93000a",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-primary-container": "#f7f6ff",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-bright": "#39393b",
+                        "secondary-container": "#3f465c",
+                        "on-surface-variant": "#c3c5d8",
+                        "inverse-primary": "#024cec",
+                        "on-tertiary-fixed-variant": "#454747"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin": "48px",
+                        "unit": "4px",
+                        "container-max": "1440px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-xl": ["Manrope"],
+                        "label-mono": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "1.0", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                        "body-md": ["15px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "600"}],
+                        "label-mono": ["13px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .technical-gradient {
+            background: radial-gradient(circle at 50% 0%, rgba(46,98,255,0.15) 0%, transparent 50%);
+        }
+        .bento-glow {
+            position: relative;
+        }
+        .bento-glow::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            pointer-events: none;
+        }
+        .bento-glow:hover::after {
+            border-color: rgba(46, 98, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Bar -->
+<nav class="bg-slate-950/80 backdrop-blur-md text-slate-400 font-manrope text-sm font-medium tracking-tight docked full-width top-0 z-50 border-b border-white/10 shadow-[inset_0_1px_0_0_rgba(46,98,255,0.1)] sticky">
+<div class="flex items-center justify-between px-8 py-4 w-full max-w-screen-2xl mx-auto">
+<div class="text-xl font-bold tracking-tighter text-white uppercase">Knowledge Fund</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-white border-b-2 border-blue-600 pb-1" href="#">Platform</a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#">Governance</a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#">Use Cases</a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#">Company</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="px-4 py-2 text-slate-400 hover:text-white transition-all duration-200 active:scale-95">Sign In</button>
+<a class="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200 active:scale-95 inline-block" href="mailto:knowledgefund@gmail.com">Get Started</a>
+</div>
+</div>
+</nav>
+<!-- Hero / Mission Section -->
+<section class="relative overflow-hidden technical-gradient pt-24 pb-32">
+<div class="max-w-screen-2xl mx-auto px-8">
+<div class="max-w-4xl mx-auto text-center mb-24">
+<span class="font-label-mono text-label-mono text-primary uppercase tracking-[0.2em] mb-6 block">Unified Intelligence</span>
+<h1 class="font-headline-xl text-headline-xl text-white mb-8">
+                    Help your organisation understand, agree, and move in one direction.
+                </h1>
+<div class="flex justify-center gap-4">
+<a class="bg-primary-container text-on-primary-container px-8 py-4 font-headline-md text-body-lg rounded-lg hover:shadow-[0_0_20px_rgba(46,98,255,0.4)] transition-all active:scale-95 inline-block" href="mailto:knowledgefund@gmail.com">
+                        Build the fund your business already depends on
+                    </a>
+</div>
+</div>
+<!-- Bento Grid Content (Three Pillars) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
+<!-- Pillar 1: Understand -->
+<div class="md:col-span-4 bg-surface-container-low bento-glow p-8 rounded-xl flex flex-col border border-white/5">
+<div class="mb-12 flex items-center justify-between"><div class="p-3 bg-primary-container/10 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="visibility">visibility</span>
+</div></div>
+<h3 class="font-headline-lg text-headline-lg text-white mb-4">Understand</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">
+                        Establish seamless access to organizational knowledge. Break down silos by indexing institutional memory, making the complex simple and the obscure visible.
+                    </p>
+<div class="mt-8 pt-6 border-t border-white/5 flex items-center justify-between text-primary">
+<span class="font-label-mono text-label-mono">Access to knowledge</span>
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Pillar 2: Agree -->
+<div class="md:col-span-4 bg-surface-container-low bento-glow p-8 rounded-xl flex flex-col border border-white/5 relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<img class="w-full h-full object-cover grayscale brightness-50" data-alt="A technical architectural diagram representing organizational governance and shared knowledge structures. The visual style is monochromatic and minimalist with glowing data nodes and linear connections, emphasizing precision and technical depth within a dark-mode enterprise environment. High contrast lighting highlights the structural complexity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChWVJxhmkyh_RdlMUsbdmnG_4oRizQ1EkOD7mKvmxq_Fbi01vUwMpmNcastH8XYt4ZpN4_z_JdfeXBxTMEyAK5FLa7336yAk1qiNfh7xLGIiVVd5kpL5i7OSiTvfn9nnKHra4N-k8K3rAg1kNfHEsdgjCk7lCrXffklrCkAuBl09aOnf0qkJXwiMpYaoZJdU9_1MWEn_bY2VbSG1tlJuFL25pIaJc1_N9XvRmZjY0ATgy1hneMvEKwXZ4qaWsvZvOdoAJ-N5pkhho"/>
+</div>
+<div class="relative z-10 h-full flex flex-col">
+<div class="mb-12 flex items-center justify-between"><div class="p-3 bg-primary-container/10 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="handshake">handshake</span>
+</div></div>
+<h3 class="font-headline-lg text-headline-lg text-white mb-4">Agree</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">
+                            Foster a shared view of what's being done. Eliminate misalignment through algorithmic verification and transparent governance protocols that ensure everyone is on the same page.
+                        </p>
+<div class="mt-8 pt-6 border-t border-white/5 flex items-center justify-between text-primary">
+<span class="font-label-mono text-label-mono">Shared view of work</span>
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Pillar 3: Move in one direction -->
+<div class="md:col-span-4 bg-surface-container-low bento-glow p-8 rounded-xl flex flex-col border border-white/5">
+<div class="mb-12 flex items-center justify-between"><div class="p-3 bg-primary-container/10 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="navigation">navigation</span>
+</div></div>
+<h3 class="font-headline-lg text-headline-lg text-white mb-4">Move in one direction</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">
+                        Enable autonomous alignment at scale. Empower teams to execute with confidence, guided by sovereign intelligence that synchronizes efforts without manual oversight.
+                    </p>
+<div class="mt-8 pt-6 border-t border-white/5 flex items-center justify-between text-primary">
+<span class="font-label-mono text-label-mono">Autonomous alignment</span>
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Deep Technical View Section -->
+<section class="py-24 bg-surface-container-lowest border-y border-white/5">
+<div class="max-w-screen-2xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div>
+<span class="font-label-mono text-label-mono text-slate-500 uppercase tracking-widest mb-4 block">The Architecture of Governance</span>
+<h2 class="font-headline-xl text-headline-xl text-white mb-8">Precision-Engineered Consensus</h2>
+<div class="space-y-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary shrink-0" data-icon="check_circle">check_circle</span>
+<div>
+<h4 class="font-headline-md text-white mb-2">Immutable Audit Trails</h4>
+<p class="font-body-md text-on-surface-variant">Every decision and data update is cryptographically signed and stored in a transparent, sovereign ledger.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary shrink-0" data-icon="memory">memory</span>
+<div>
+<h4 class="font-headline-md text-white mb-2">Neural Knowledge Mapping</h4>
+<p class="font-body-md text-on-surface-variant">AI-driven extraction converts unstructured dialogue and documentation into actionable institutional assets.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary shrink-0" data-icon="hub">hub</span>
+<div>
+<h4 class="font-headline-md text-white mb-2">Decentralized Execution</h4>
+<p class="font-body-md text-on-surface-variant">Enable radical autonomy while maintaining perfect strategic alignment across global business units.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container p-4 rounded-xl border border-white/10 shadow-2xl relative group">
+<div class="aspect-square bg-slate-950 rounded-lg overflow-hidden border border-white/5 flex items-center justify-center relative">
+<img class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="A detailed digital dashboard visualization showcasing a Knowledge Fund's governance interface. The layout is clean and technical, featuring complex data visualizations, network graphs of organizational relationships, and high-contrast typography. The scene is lit with a subtle blue neon glow against a deep black background, conveying a sense of advanced intelligence and sovereign control." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWCop9YTzTyau5fj8_WveOvqXshUYwhevTCh9Aph34b0rKinFFJ65KEa0YmgMc3OKvxR1tNIEFpnlrqrFwRDtExy26104HY0Z3IaxQhbk2AUjZPhUIu3veSn4mKxqkZanukcvFstDAoRUtO0kYr5jY1foxnOyxaA2umEMycJvrv8I6EHRXhnDt2xkbVvn8DL05Z7sj-JU5i0Hed117dE9LHxf1mPbfxsydZRnAoCawv4iKVZqiiFwa6uGnzOpP3KBB3XrvGQYdy7c"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<div class="bg-primary px-4 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-900 text-sm" data-icon="bolt">bolt</span>
+<span class="font-label-mono text-label-mono text-slate-900 uppercase">Live Network State</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-slate-950 py-12 border-t border-white/5">
+<div class="max-w-screen-2xl mx-auto px-8 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+<div class="col-span-2">
+<div class="text-lg font-bold text-white mb-4">Knowledge Fund</div>
+<p class="font-manrope text-xs text-slate-500 max-w-[200px]">© 2024 Knowledge Fund. AI-Governed Excellence. Sovereign intelligence for high-stakes enterprise.</p>
+</div>
+<div>
+<h5 class="text-white font-semibold mb-4">Product</h5>
+<ul class="space-y-2">
+<li><a class="font-manrope text-xs text-slate-500 hover:text-white transition-colors" href="#">Platform</a></li>
+<li><a class="font-manrope text-xs text-slate-500 hover:text-white transition-colors" href="#">Governance</a></li>
+<li><a class="font-manrope text-xs text-slate-500 hover:text-white transition-colors" href="#">API Docs</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-white font-semibold mb-4">Trust</h5>
+<ul class="space-y-2">
+<li><a class="font-manrope text-xs text-slate-500 hover:text-white transition-colors" href="#">SOC 2 Trust</a></li>
+<li><a class="font-manrope text-xs text-slate-500 hover:text-white transition-colors" href="#">ISO 27001</a></li>
+<li><a class="font-manrope text-xs text-slate-500 hover:text-white transition-colors" href="#">Security Architecture</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-white font-semibold mb-4">Legal</h5>
+<ul class="space-y-2">
+<li><a class="font-manrope text-xs text-slate-500 hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-manrope text-xs text-slate-500 hover:text-white transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-white font-semibold mb-4">Connect</h5>
+<ul class="space-y-2">
+<li><a class="font-manrope text-xs text-slate-500 hover:text-white transition-colors" href="#">Company</a></li>
+<li><a class="font-manrope text-xs text-slate-500 hover:text-white transition-colors" href="#">Support</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</body></html>

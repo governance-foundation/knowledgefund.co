@@ -1,67 +1,35 @@
 import Link from "next/link";
 
-const footerSections = [
-  {
-    heading: "Product",
-    links: [
-      { href: "/model", label: "Model" },
-      { href: "/use-cases", label: "Use Cases" },
-      { href: "/governance", label: "Governance" },
-    ],
-  },
-  {
-    heading: "Company",
-    links: [
-      { href: "/about", label: "About" },
-      { href: "/coordination", label: "Coordination" },
-      { href: "/contact", label: "Contact" },
-    ],
-  },
-  {
-    heading: "Trust",
-    links: [
-      { href: "/governance", label: "SOC 2 Alignment" },
-      { href: "/governance", label: "ISO 27001" },
-      { href: "/governance", label: "AI Safety" },
-    ],
-  },
+const footerLinks = [
+  { href: "/governance", label: "Privacy Policy" },
+  { href: "/governance", label: "Terms of Service" },
+  { href: "/architecture", label: "Security Architecture" },
+  { href: "mailto:knowledgefund@gmail.com", label: "Contact" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white-fade bg-slate-950">
-      <div className="kf-container py-14">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
-          <div className="lg:col-span-2">
-            <Link href="/" className="kf-display block text-lg font-extrabold uppercase text-white">
-              KnowledgeFund
+    <footer
+      className="w-full border-t border-white/5 bg-[#09090b] px-4 font-display sm:px-7 lg:px-12"
+      style={{ paddingBlock: 64 }}
+    >
+      <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-between gap-8 min-[720px]:flex-row">
+        <div className="flex flex-col items-center gap-4 min-[720px]:items-start">
+          <Link href="/" className="text-sm font-black uppercase text-slate-100 lg:text-lg">
+            Knowledge Fund
+          </Link>
+          <p className="text-center text-[9px] normal-case text-slate-500 min-[720px]:text-left lg:text-xs">
+            © 2024 Knowledge Fund. All sovereign rights reserved.
+          </p>
+        </div>
+
+        <nav className="flex flex-wrap justify-center gap-5 text-center text-[8px] font-medium uppercase tracking-[0.18em] text-slate-500 sm:gap-8 lg:text-[10px]">
+          {footerLinks.map((link) => (
+            <Link key={link.label} href={link.href} className="opacity-80 transition-colors hover:text-[#2e62ff] hover:opacity-100">
+              {link.label}
             </Link>
-            <p className="mt-4 max-w-sm text-sm leading-6 text-slate-500">
-              The governed knowledge foundation for organisations that need AI to be useful,
-              secure, accountable, and aligned with the business mission.
-            </p>
-          </div>
-
-          {footerSections.map((section) => (
-            <div key={section.heading}>
-              <h2 className="kf-mono text-xs font-semibold uppercase text-white">{section.heading}</h2>
-              <ul className="mt-5 space-y-3">
-                {section.links.map((link) => (
-                  <li key={`${section.heading}-${link.label}`}>
-                    <Link href={link.href} className="text-sm text-slate-500 transition-colors hover:text-white">
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
           ))}
-        </div>
-
-        <div className="mt-12 flex flex-col gap-3 border-t border-white-fade pt-7 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
-          <p>© 2026 KnowledgeFund. All rights reserved.</p>
-          <p>Understand. Agree. Govern. Move in one direction.</p>
-        </div>
+        </nav>
       </div>
     </footer>
   );

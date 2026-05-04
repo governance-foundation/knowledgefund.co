@@ -2,6 +2,9 @@
 @config "../../tailwind.config.js";
 
 :root {
+  --font-inter: Inter;
+  --font-manrope: Manrope;
+  --font-space-grotesk: "Space Grotesk";
   --kf-background: #09090b;
   --kf-surface: #131315;
   --kf-surface-low: #1c1b1d;
@@ -48,23 +51,13 @@ html {
 }
 
 body {
-  background:
-    radial-gradient(circle at top, rgba(59, 130, 246, 0.1), transparent 34rem),
-    var(--kf-background);
+  background: var(--kf-background);
   color: var(--kf-text);
-  font-family: var(--font-manrope), Manrope, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: "kern" 1, "liga" 1;
-}
-
-main > section {
-  border-top: 1px solid var(--kf-line-soft);
-}
-
-main > section:first-child {
-  border-top: 0;
 }
 
 ::selection {
@@ -130,7 +123,7 @@ textarea {
 }
 
 .kf-mono {
-  font-family: var(--font-manrope), Manrope, ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-space-grotesk), "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   letter-spacing: 0;
 }
 
@@ -142,14 +135,42 @@ textarea {
 }
 
 .technical-grid {
-  background-image: radial-gradient(circle, color-mix(in srgb, var(--kf-text) 5%, transparent) 1px, transparent 1px);
   background-size: 40px 40px;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+.technical-glow {
+  box-shadow: inset 0 1px 0 0 rgba(46, 98, 255, 0.2);
+}
+
+.hero-gradient {
+  background: radial-gradient(circle at top center, rgba(46, 98, 255, 0.1) 0%, transparent 70%);
+}
+
+.technical-gradient {
+  background: radial-gradient(circle at 50% 0%, rgba(46, 98, 255, 0.15) 0%, transparent 50%);
 }
 
 .mesh-gradient {
-  background:
-    radial-gradient(circle at top, rgba(59, 130, 246, 0.1), transparent 34rem),
-    radial-gradient(at 100% 80%, rgba(46, 98, 255, 0.08), transparent 34rem);
+  background-image:
+    radial-gradient(at 0% 0%, rgba(46, 98, 255, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(46, 98, 255, 0.1) 0px, transparent 50%);
+}
+
+.bento-glow {
+  position: relative;
+}
+
+.bento-glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.bento-glow:hover::after {
+  border-color: rgba(46, 98, 255, 0.3);
 }
 
 .blue-glow {
@@ -162,6 +183,186 @@ textarea {
   box-shadow:
     0 0 80px rgba(46, 98, 255, 0.22),
     0 0 160px rgba(46, 98, 255, 0.08);
+}
+
+.glass-border {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 1px 0 0 rgba(46, 98, 255, 0.1);
+}
+
+.mechanical-border {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glow-hover:hover {
+  border-color: rgba(46, 98, 255, 0.3);
+  box-shadow: 0 0 20px rgba(46, 98, 255, 0.05);
+}
+
+.glass-panel {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(46, 98, 255, 0.3);
+}
+
+.stitch-mesh {
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(46, 98, 255, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(46, 98, 255, 0.05) 0%, transparent 40%);
+}
+
+.material-symbols-outlined {
+  direction: ltr;
+  display: inline-block;
+  font-family: "Material Symbols Outlined";
+  font-feature-settings: "liga";
+  font-size: 1.25rem;
+  font-style: normal;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+.stitch-container {
+  width: 100%;
+  max-width: 1536px;
+  margin-inline: auto;
+  padding-inline: 32px;
+}
+
+.stitch-hero-title {
+  font-family: var(--font-manrope), Manrope, ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(42px, 4vw, 48px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.stitch-xl-title {
+  font-family: var(--font-manrope), Manrope, ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(32px, 3vw, 48px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.stitch-lg-title {
+  font-family: var(--font-manrope), Manrope, ui-sans-serif, system-ui, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.stitch-md-title {
+  font-family: var(--font-manrope), Manrope, ui-sans-serif, system-ui, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.stitch-body-lg {
+  font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.stitch-body {
+  font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.stitch-label {
+  font-family: var(--font-space-grotesk), "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.stitch-card {
+  background: #1c1b1d;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 0.25rem;
+  padding: 32px;
+}
+
+.stitch-card:hover {
+  border-color: rgba(46, 98, 255, 0.3);
+}
+
+.stitch-button-primary,
+.stitch-button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  font-family: var(--font-manrope), Manrope, ui-sans-serif, system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  min-height: 48px;
+  padding: 0 32px;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    filter 160ms ease,
+    transform 160ms ease;
+}
+
+.stitch-button-primary {
+  background: #2e62ff;
+  color: #f7f6ff;
+  box-shadow: 0 24px 64px rgba(46, 98, 255, 0.16);
+}
+
+.stitch-button-primary:hover {
+  filter: brightness(1.1);
+}
+
+.stitch-button-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.stitch-button-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.stitch-button-primary:active,
+.stitch-button-secondary:active {
+  transform: scale(0.98);
+}
+
+.stitch-nav-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 0 20px;
+  border-radius: 0.25rem;
+  background: #2e62ff;
+  color: #f7f6ff;
+  font-family: var(--font-manrope), Manrope, ui-sans-serif, system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .stitch-container {
+    padding-inline: 24px;
+  }
 }
 
 html[data-theme="light"] .kf-card {

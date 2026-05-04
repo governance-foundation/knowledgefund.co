@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
   basePath: githubPagesBasePath,
+  turbopack: {
+    root: process.cwd(),
+  },
   images: {
     unoptimized: true,
   },
