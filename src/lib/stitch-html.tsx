@@ -29,8 +29,50 @@ const footerLinks = [
   { href: "mailto:knowledgefund@gmail.com", label: "Contact" },
 ];
 
+const basePath = process.env.GITHUB_PAGES_BASE_PATH?.replace(/\/$/, "") ?? "";
+
 function escapeRegExp(value: string) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function splitUrlSuffix(value: string) {
+  const hashIndex = value.indexOf("#");
+  const hash = hashIndex === -1 ? "" : value.slice(hashIndex);
+  const beforeHash = hashIndex === -1 ? value : value.slice(0, hashIndex);
+  const queryIndex = beforeHash.indexOf("?");
+  const query = queryIndex === -1 ? "" : beforeHash.slice(queryIndex);
+  const pathName = queryIndex === -1 ? beforeHash : beforeHash.slice(0, queryIndex);
+
+  return { hash, pathName, query };
+}
+
+function withBasePath(value: string, attributeName: string) {
+  if (
+    !basePath ||
+    !value.startsWith("/") ||
+    value.startsWith("//") ||
+    value === basePath ||
+    value.startsWith(`${basePath}/`)
+  ) {
+    return value;
+  }
+
+  if (attributeName !== "href") {
+    return `${basePath}${value}`;
+  }
+
+  const { hash, pathName, query } = splitUrlSuffix(value);
+  const routePath = pathName === "/" ? `${basePath}/` : `${basePath}${pathName}`;
+  const hasFileExtension = /\.[a-z0-9]+$/i.test(pathName);
+  const normalizedRoutePath = hasFileExtension || routePath.endsWith("/") ? routePath : `${routePath}/`;
+
+  return `${normalizedRoutePath}${query}${hash}`;
+}
+
+function prefixRootRelativeUrls(body: string) {
+  return body.replace(/\b(href|src)="(\/[^"]*)"/g, (_match, attributeName: string, value: string) => {
+    return `${attributeName}="${withBasePath(value, attributeName)}"`;
+  });
 }
 
 function getActiveNavClass(linkMarkup: string, inactiveClass: string) {
@@ -144,7 +186,7 @@ function getStitchBody(
   const pageStyles = getPageStyles(html);
   const bodyMarkup = normalizeFooterLinks(normalizeNav(replaceImages(body, localImages, tintedImageIndexes), activePage));
 
-  return `${pageStyles}\n${bodyMarkup}`;
+  return prefixRootRelativeUrls(`${pageStyles}\n${bodyMarkup}`);
 }
 
 export default function StitchHtmlPage({ activePage, localImages, page, tintedImageIndexes }: StitchHtmlPageProps) {
