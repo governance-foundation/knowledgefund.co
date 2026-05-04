@@ -19,7 +19,7 @@ export default function Footer() {
             Knowledge Fund
           </Link>
           <p className="text-center text-[9px] normal-case text-slate-500 min-[720px]:text-left lg:text-xs">
-            © 2024 Knowledge Fund. All sovereign rights reserved.
+            © 2026 Knowledge Fund. All sovereign rights reserved.
           </p>
         </div>
 
