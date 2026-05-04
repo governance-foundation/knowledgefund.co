@@ -78,49 +78,33 @@ function makeRootUrlsRelative(body: string, page: string) {
   });
 }
 
-function getActiveNavClass(linkMarkup: string, inactiveClass: string) {
-  const classMatches = Array.from(linkMarkup.matchAll(/<a\s+class="([^"]*)"[^>]*>/g));
-  const activeClass = classMatches.find((match) => {
-    const className = match[1];
+function getSharedHeader(activePage?: StitchNavKey) {
+  const activeClass = "text-[#2E62FF] font-semibold transition-colors";
+  const inactiveClass = "text-slate-400 hover:text-white transition-colors";
+  const navMarkup = stitchNavItems
+    .map((item) => {
+      const className = item.key === activePage ? activeClass : inactiveClass;
 
-    return className.includes("border-b-2") || className.includes("text-[#2E62FF]");
-  })?.[1];
+      return `<a class="${className}" href="${item.href}">${item.label}</a>`;
+    })
+    .join("\n");
 
-  if (activeClass) {
-    return activeClass;
-  }
-
-  const promotedClass = inactiveClass
-    .replace("text-slate-400 hover:text-white", "text-[#2E62FF]")
-    .replace("text-slate-400", "text-[#2E62FF]");
-
-  return promotedClass.includes("font-semibold") ? promotedClass : `${promotedClass} font-semibold`;
+  return `<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#09090B]/80 backdrop-blur-xl border-b border-white/10 flex justify-between items-center px-8 h-16 max-w-full font-manrope text-sm tracking-tight">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-slate-50 uppercase">Knowledge Fund</span>
+<div class="hidden md:flex gap-6">
+${navMarkup}
+</div>
+</div>
+<div class="flex items-center gap-4">
+<a class="bg-primary-container text-on-primary-container px-5 py-2 rounded-lg font-semibold scale-95 active:scale-90 transition-transform" href="mailto:knowledgefund@gmail.com">Connect</a>
+</div>
+</nav>`;
 }
 
-function normalizeNav(body: string, activePage?: StitchNavKey) {
-  if (!activePage) {
-    return body;
-  }
-
-  return body.replace(
-    /(<nav\b[\s\S]*?<div class="hidden md:flex[^"]*">)([\s\S]*?)(<\/div>[\s\S]*?<\/nav>)/i,
-    (_match: string, before: string, linkMarkup: string, after: string) => {
-      const inactiveClass =
-        Array.from(linkMarkup.matchAll(/<a\s+class="([^"]*)"[^>]*>/g)).find((classMatch) =>
-          classMatch[1].includes("text-slate-400"),
-        )?.[1] ?? "text-slate-400 hover:text-white transition-colors";
-      const activeClass = getActiveNavClass(linkMarkup, inactiveClass);
-      const navMarkup = stitchNavItems
-        .map((item) => {
-          const className = item.key === activePage ? activeClass : inactiveClass;
-
-          return `<a class="${className}" href="${item.href}">${item.label}</a>`;
-        })
-        .join("\n");
-
-      return `${before}\n${navMarkup}\n${after}`;
-    },
-  );
+function normalizeHeader(body: string, activePage?: StitchNavKey) {
+  return body.replace(/(?:<!--\s*Top\s*Nav(?:igation)?\s*Bar\s*-->\s*)?<nav\b[\s\S]*?<\/nav>/i, getSharedHeader(activePage));
 }
 
 function normalizeFooterLinks(body: string) {
@@ -187,7 +171,7 @@ function getStitchBody(
   }
 
   const pageStyles = getPageStyles(html);
-  const bodyMarkup = normalizeFooterLinks(normalizeNav(replaceImages(body, localImages, tintedImageIndexes), activePage));
+  const bodyMarkup = normalizeFooterLinks(normalizeHeader(replaceImages(body, localImages, tintedImageIndexes), activePage));
 
   return makeRootUrlsRelative(`${pageStyles}\n${bodyMarkup}`, page);
 }
