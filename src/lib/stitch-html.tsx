@@ -17,22 +17,6 @@ const stitchNavItems: Array<{ href: string; key: StitchNavKey; label: string }> 
   { href: "/methodology", key: "methodology", label: "Methodology" },
 ];
 
-const footerLinks = [
-  { href: "/", label: "Platform" },
-  { href: "/governance", label: "Governance Framework" },
-  { href: "/trust", label: "Trust Architecture" },
-  { href: "/methodology", label: "Methodology" },
-  { href: "/trust", label: "Security Architecture" },
-  { href: "/trust", label: "SOC 2 Trust" },
-  { href: "/trust", label: "ISO 27001" },
-  { href: "/methodology", label: "API Docs" },
-  { href: "mailto:knowledgefund@gmail.com", label: "Contact" },
-];
-
-function escapeRegExp(value: string) {
-  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}
-
 function splitUrlSuffix(value: string) {
   const hashIndex = value.indexOf("#");
   const hash = hashIndex === -1 ? "" : value.slice(hashIndex);
@@ -107,13 +91,22 @@ function normalizeHeader(body: string, activePage?: StitchNavKey) {
   return body.replace(/(?:<!--\s*Top\s*Nav(?:igation)?\s*Bar\s*-->\s*)?<nav\b[\s\S]*?<\/nav>/i, getSharedHeader(activePage));
 }
 
-function normalizeFooterLinks(body: string) {
-  return footerLinks.reduce((markup, link) => {
-    const labelPattern = escapeRegExp(link.label);
-    const linkPattern = new RegExp(`(<a\\b[^>]*?href=")[^"]*("[^>]*>\\s*${labelPattern}\\s*</a>)`, "g");
+function getSharedFooter() {
+  return `<!-- Footer -->
+<footer class="w-full border-t border-white/5 bg-[#09090B] flex flex-col items-center justify-center px-12 py-16 gap-4 font-manrope text-xs uppercase tracking-widest text-center">
+<span class="text-lg font-black text-slate-100">Knowledge Fund</span>
+<p class="text-slate-500 normal-case tracking-normal">© 2026 Knowledge Fund. All sovereign rights reserved.</p>
+</footer>`;
+}
 
-    return markup.replace(linkPattern, `$1${link.href}$2`);
-  }, body);
+function normalizeFooter(body: string) {
+  const footerPattern = /(?:<!--\s*Footer(?:\s+Section)?\s*-->\s*)?<footer\b[\s\S]*?<\/footer>/i;
+
+  if (footerPattern.test(body)) {
+    return body.replace(footerPattern, getSharedFooter());
+  }
+
+  return `${body}\n${getSharedFooter()}`;
 }
 
 function replaceImages(body: string, localImages: string[], tintedImageIndexes: number[]) {
@@ -171,7 +164,7 @@ function getStitchBody(
   }
 
   const pageStyles = getPageStyles(html);
-  const bodyMarkup = normalizeFooterLinks(normalizeHeader(replaceImages(body, localImages, tintedImageIndexes), activePage));
+  const bodyMarkup = normalizeFooter(normalizeHeader(replaceImages(body, localImages, tintedImageIndexes), activePage));
 
   return makeRootUrlsRelative(`${pageStyles}\n${bodyMarkup}`, page);
 }
