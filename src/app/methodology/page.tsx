@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import StitchHtmlPage from "@/lib/stitch-html";
 
 export const metadata: Metadata = {
-  title: "Methodology | Knowledge Fund",
-  description: "Knowledge Fund methodology for governed AI adoption and institutional readiness.",
+  title: "Use Cases | Knowledge Fund",
+  description: "Knowledge Fund use cases for governed AI adoption and institutional readiness.",
 };
 
 export default function MethodologyPage() {

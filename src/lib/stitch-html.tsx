@@ -14,7 +14,7 @@ const stitchNavItems: Array<{ href: string; key: StitchNavKey; label: string }> 
   { href: "/", key: "platform", label: "Platform" },
   { href: "/governance", key: "governance", label: "Governance" },
   { href: "/trust", key: "trust", label: "Trust" },
-  { href: "/methodology", key: "methodology", label: "Methodology" },
+  { href: "/methodology", key: "methodology", label: "Use Cases" },
 ];
 
 function splitUrlSuffix(value: string) {
