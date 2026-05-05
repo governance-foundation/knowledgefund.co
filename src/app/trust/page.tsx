@@ -2,17 +2,16 @@ import type { Metadata } from "next";
 import StitchHtmlPage from "@/lib/stitch-html";
 
 export const metadata: Metadata = {
-  title: "Trust Architecture | Knowledge Fund",
-  description: "Governance and trust architecture for sovereign, auditable enterprise intelligence.",
+  title: "Trust | Knowledge Fund",
+  description:
+    "How KnowledgeFund supports responsible, controlled, reviewable, and evidence-backed AI adoption.",
 };
 
 export default function TrustPage() {
   return (
     <StitchHtmlPage
       activePage="trust"
-      localImages={["/stitch-redesign/knowledgefund-display.jpg"]}
       page="trust_governance"
-      tintedImageIndexes={[0]}
     />
   );
 }

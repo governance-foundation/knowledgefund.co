@@ -1,313 +1,136 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en"><head>
+<html class="dark" lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Governance &amp; AI Safety | Knowledge Fund</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "surface-container-low": "#1c1b1d",
-                        "surface": "#131315",
-                        "outline": "#8d90a2",
-                        "secondary": "#bec6e0",
-                        "tertiary-container": "#707171",
-                        "tertiary-fixed-dim": "#c6c6c7",
-                        "on-primary-fixed-variant": "#0039b5",
-                        "on-primary-fixed": "#001552",
-                        "background": "#131315",
-                        "surface-container-highest": "#353437",
-                        "on-secondary": "#283044",
-                        "on-secondary-container": "#adb4ce",
-                        "on-background": "#e5e1e4",
-                        "surface-container-lowest": "#0e0e10",
-                        "primary-container": "#2e62ff",
-                        "primary": "#b7c4ff",
-                        "outline-variant": "#434656",
-                        "surface-tint": "#b7c4ff",
-                        "inverse-surface": "#e5e1e4",
-                        "primary-fixed": "#dce1ff",
-                        "surface-dim": "#131315",
-                        "primary-fixed-dim": "#b7c4ff",
-                        "on-tertiary-fixed": "#1a1c1c",
-                        "surface-container-high": "#2a2a2c",
-                        "on-tertiary": "#2f3131",
-                        "on-secondary-fixed-variant": "#3f465c",
-                        "tertiary": "#c6c6c7",
-                        "surface-container": "#201f22",
-                        "on-surface": "#e5e1e4",
-                        "on-secondary-fixed": "#131b2e",
-                        "secondary-fixed": "#dae2fd",
-                        "inverse-on-surface": "#313032",
-                        "on-tertiary-container": "#f6f7f7",
-                        "on-error-container": "#ffdad6",
-                        "on-error": "#690005",
-                        "on-primary": "#002682",
-                        "surface-variant": "#353437",
-                        "error": "#ffb4ab",
-                        "error-container": "#93000a",
-                        "secondary-fixed-dim": "#bec6e0",
-                        "on-primary-container": "#f7f6ff",
-                        "tertiary-fixed": "#e2e2e2",
-                        "surface-bright": "#39393b",
-                        "secondary-container": "#3f465c",
-                        "on-surface-variant": "#c3c5d8",
-                        "inverse-primary": "#024cec",
-                        "on-tertiary-fixed-variant": "#454747"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
-                    },
-                    "fontFamily": {
-                        "label-sm": ["Inter"],
-                        "headline-md": ["Manrope"],
-                        "headline-lg": ["Manrope"],
-                        "body-md": ["Inter"],
-                        "body-lg": ["Inter"],
-                        "headline-xl": ["Manrope"],
-                        "label-mono": ["Space Grotesk"]
-                    },
-                    "fontSize": {
-                        "label-sm": ["12px", {"lineHeight": "1.0", "fontWeight": "500"}],
-                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
-                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "500"}],
-                        "body-md": ["15px", {"lineHeight": "1.5", "fontWeight": "400"}],
-                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "600"}],
-                        "label-mono": ["13px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}]
-                    }
-                },
-            },
-        }
-    </script>
 <style>
-        body { background-color: #09090B; }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            vertical-align: middle;
-        }
-        .technical-glow {
-            box-shadow: inset 0 1px 0 0 rgba(46, 98, 255, 0.2);
-        }
-        .hero-gradient {
-            background: radial-gradient(circle at top center, rgba(46, 98, 255, 0.1) 0%, transparent 70%);
-        }
-    </style>
+  body { background: #131315; }
+  .kf-page { background: linear-gradient(180deg, #09090b 0%, #131315 48%, #09090b 100%); }
+  .kf-container { width: min(100% - 48px, 1180px); margin-inline: auto; }
+  .kf-section { padding-block: 96px; }
+  .kf-card { background: rgba(28,27,29,0.78); border: 1px solid rgba(255,255,255,0.07); border-radius: 18px; box-shadow: inset 0 1px rgba(255,255,255,0.05); }
+  .kf-kicker { display: inline-flex; align-items: center; gap: 10px; color: #b7c4ff; font-family: "Space Grotesk", sans-serif; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; }
+  .kf-kicker::before { content: ""; width: 8px; height: 8px; border-radius: 999px; background: #2e62ff; box-shadow: 0 0 18px rgba(46,98,255,0.82); }
+  .kf-title { color: #fff; font-family: Manrope, sans-serif; font-size: clamp(40px, 5vw, 68px); font-weight: 750; letter-spacing: -0.06em; line-height: 1; }
+  .kf-section-title { color: #fff; font-family: Manrope, sans-serif; font-size: clamp(30px, 4vw, 48px); font-weight: 700; letter-spacing: -0.045em; line-height: 1.05; }
+  .kf-body-lg { color: #c3c5d8; font-family: Inter, sans-serif; font-size: 18px; line-height: 1.65; }
+  .kf-number { align-items: center; background: rgba(46,98,255,0.14); border: 1px solid rgba(46,98,255,0.32); border-radius: 999px; color: #fff; display: inline-flex; font-family: "Space Grotesk", sans-serif; font-size: 12px; height: 34px; justify-content: center; width: 34px; }
+  .kf-button-primary { align-items: center; background: #2e62ff; border-radius: 14px; box-shadow: 0 24px 80px rgba(46,98,255,0.24); color: #f7f6ff; display: inline-flex; font-family: Manrope, sans-serif; font-size: 14px; font-weight: 800; justify-content: center; min-height: 54px; padding-inline: 24px; transition: 160ms ease; }
+  .kf-button-primary:hover { filter: brightness(1.1); }
+  @media (max-width: 768px) { .kf-container { width: min(100% - 32px, 1180px); } .kf-section { padding-block: 72px; } }
+</style>
 </head>
-<body class="font-body-md text-on-background bg-background selection:bg-primary-container selection:text-on-primary-container">
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-white">
 <!-- TopNavBar -->
-<nav class="bg-slate-950/80 backdrop-blur-md docked full-width top-0 z-50 border-b border-white/10 shadow-[inset_0_1px_0_0_rgba(46,98,255,0.1)] fixed w-full">
-<div class="flex items-center justify-between px-8 py-4 w-full max-w-screen-2xl mx-auto">
+<nav class="fixed top-0 w-full z-50 bg-[#09090B]/80 backdrop-blur-xl border-b border-white/10 flex justify-between items-center px-8 h-16 max-w-full font-manrope text-sm tracking-tight">
 <div class="flex items-center gap-8">
-<span class="text-xl font-bold tracking-tighter text-white uppercase font-manrope">Knowledge Fund</span>
-<div class="hidden md:flex items-center gap-6">
-<a class="font-manrope text-sm font-medium tracking-tight text-slate-400 hover:text-white transition-colors" href="#">Platform</a>
-<a class="font-manrope text-sm font-medium tracking-tight text-white border-b-2 border-blue-600 pb-1" href="#">Governance</a>
-<a class="font-manrope text-sm font-medium tracking-tight text-slate-400 hover:text-white transition-colors" href="#">Use Cases</a>
-<a class="font-manrope text-sm font-medium tracking-tight text-slate-400 hover:text-white transition-colors" href="#">Company</a>
+<span class="text-xl font-bold tracking-tighter text-slate-50 uppercase">Knowledge Fund</span>
+<div class="hidden md:flex gap-6">
+<a class="text-slate-400 hover:text-white transition-colors" href="#">Platform</a>
+<a class="text-[#2E62FF] font-semibold transition-colors" href="#">Governance</a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#">Trust</a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#">Use Cases</a>
 </div>
 </div>
 <div class="flex items-center gap-4">
-<button class="font-manrope text-sm font-medium tracking-tight text-slate-400 hover:text-white transition-colors px-4 py-2 active:scale-95 duration-100">Sign In</button>
-<a class="bg-primary-container text-on-primary-container font-manrope text-sm font-medium tracking-tight px-5 py-2 rounded shadow-lg hover:bg-blue-500 transition-all active:scale-95 duration-100 flex items-center justify-center" href="mailto:knowledgefund@gmail.com">Get Started</a>
-</div>
+<a class="bg-primary-container text-on-primary-container px-5 py-2 rounded-lg font-semibold scale-95 active:scale-90 transition-transform" href="mailto:knowledgefund@gmail.com">Connect</a>
 </div>
 </nav>
-<main class="pt-24">
-<!-- Hero Section -->
-<section class="hero-gradient py-24 px-8 border-b border-white/5">
-<div class="max-w-screen-2xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-<div class="space-y-8">
-<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full">
-<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-<span class="font-label-mono text-label-mono text-primary uppercase">Institutional Trust</span>
-</div>
-<h1 class="font-headline-xl text-headline-xl text-white">Built for governed AI adoption</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
-                        In an era of generative uncertainty, sovereign intelligence requires absolute technical precision. Knowledge Fund provides the infrastructure to deploy AI with rigorous safety protocols and enterprise-grade compliance.
-                    </p>
-</div>
-<div class="relative">
-<div class="aspect-[4/3] rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-surface-container-lowest">
-<img alt="Governance Platform Interface" class="w-full h-full object-cover opacity-80" data-alt="A sophisticated enterprise dashboard showing high-density data visualization of AI governance metrics. The UI features a dark, technical theme with neon blue accents and hairline borders. Elements include audit logs, permission matrices, and real-time safety monitoring charts. The overall aesthetic is professional, high-precision, and institutional, mirroring a command-and-control center for digital intelligence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq_cOesBMJMZrmB93JID_axS5klGoTl9uEbrGSui1hh0k19ehBLfSt_jyKfdY9qRyWHw09GvUh8yhbscF5gLubStz7ezOn08nrSbV3cZZO5q2EHGe6xrQIqbtL_OtRGsaOB6sGPKfKhaaMsk0DjA3ZhXunsk4fT5EJqenT4Hi-jmaoWvhwkaZEaVDJ7UhQg2S5_Z5ef3nzmebZZ1Hx7JyOvLw2ypTSCE03nVdeIRDpK-sBx2pCJfglU2-EQ0twnJLzJJTP0bNU8uc"/>
-</div>
-<!-- Technical Detail Overlay -->
+<main class="kf-page pt-16 overflow-hidden">
+<!-- Hero -->
+<section class="kf-section">
+<div class="kf-container">
+<div class="max-w-4xl">
+<span class="kf-kicker mb-6">Governance</span>
+<h1 class="kf-title mb-7">Governance that lets AI work safely.</h1>
+<p class="kf-body-lg">KnowledgeFund gives organisations a way to define what AI can use, what it can do, who must approve it, and what evidence must be retained.</p>
 </div>
 </div>
 </section>
-<!-- Capabilities Bento Grid -->
-<section class="py-24 px-8 max-w-screen-2xl mx-auto">
-<div class="mb-16">
-<span class="font-label-mono text-label-mono text-primary uppercase block mb-4">Core Capabilities</span>
-<h2 class="font-headline-lg text-headline-lg text-white">Precision Governance Infrastructure</h2>
+
+<!-- Principle -->
+<section class="kf-section bg-[#09090B] border-y border-white/5">
+<div class="kf-container">
+<div class="kf-card p-8 lg:p-12 grid lg:grid-cols-[0.85fr_1.15fr] gap-10">
+<h2 class="kf-section-title">Governance is not the brake. Governance is how organisations move faster without losing control.</h2>
+<p class="kf-body-lg">AI creates value when it can help with real business work. But real business work needs rules, ownership, review, and accountability. KnowledgeFund is designed to make those controls part of the workflow, not an afterthought.</p>
 </div>
-<div class="grid md:grid-cols-3 gap-6">
-<!-- RBAC Card -->
-<div class="p-8 bg-surface-container-low border border-white/5 hover:border-primary/30 transition-all group">
-<div class="mb-6 w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full group-hover:bg-primary/20 transition-colors">
-<span class="material-symbols-outlined text-primary" data-icon="admin_panel_settings">admin_panel_settings</span>
 </div>
-<h3 class="font-headline-md text-headline-md text-white mb-3">Role-Based Access</h3>
-<p class="font-body-md text-on-surface-variant leading-relaxed">
-                        Granular permission controls ensuring that only authorized entities interact with sensitive knowledge silos and model training sets.
-                    </p>
+</section>
+
+<!-- Control areas -->
+<section class="kf-section bg-[#131315]">
+<div class="kf-container">
+<div class="max-w-3xl mb-12">
+<span class="kf-kicker mb-5">Control areas</span>
+<h2 class="kf-section-title">What governance controls.</h2>
 </div>
-<!-- Audit Trails Card -->
-<div class="p-8 bg-surface-container-low border border-white/5 hover:border-primary/30 transition-all group">
-<div class="mb-6 w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full group-hover:bg-primary/20 transition-colors">
-<span class="material-symbols-outlined text-primary" data-icon="history_edu">history_edu</span>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+<div class="kf-card p-7"><h3 class="font-headline-md text-white mb-3">Access</h3><p class="text-slate-400 leading-7">Who can see, use, or update specific knowledge.</p></div>
+<div class="kf-card p-7"><h3 class="font-headline-md text-white mb-3">Sources</h3><p class="text-slate-400 leading-7">Which documents, systems, templates, and records AI is allowed to use.</p></div>
+<div class="kf-card p-7"><h3 class="font-headline-md text-white mb-3">Actions</h3><p class="text-slate-400 leading-7">Whether AI can answer, draft, recommend, review, prepare, update, or execute.</p></div>
+<div class="kf-card p-7"><h3 class="font-headline-md text-white mb-3">Approvals</h3><p class="text-slate-400 leading-7">When human review is required before content, decisions, or system changes are final.</p></div>
+<div class="kf-card p-7"><h3 class="font-headline-md text-white mb-3">Evidence</h3><p class="text-slate-400 leading-7">What sources, assumptions, changes, and approvals are retained.</p></div>
+<div class="kf-card p-7"><h3 class="font-headline-md text-white mb-3">Ownership</h3><p class="text-slate-400 leading-7">Who is responsible for knowledge domains, rules, workflows, and ongoing maintenance.</p></div>
 </div>
-<h3 class="font-headline-md text-headline-md text-white mb-3">Immutable Audit Trails</h3>
-<p class="font-body-md text-on-surface-variant leading-relaxed">
-                        Every query, every generation, and every model adjustment is logged with cryptographic certainty for regulatory compliance.
-                    </p>
 </div>
-<!-- Change History Card -->
-<div class="p-8 bg-surface-container-low border border-white/5 hover:border-primary/30 transition-all group">
-<div class="mb-6 w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full group-hover:bg-primary/20 transition-colors">
-<span class="material-symbols-outlined text-primary" data-icon="track_changes">track_changes</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-white mb-3">Change History</h3>
-<p class="font-body-md text-on-surface-variant leading-relaxed">
-                        Full version control for your organization's collective intelligence, allowing for seamless rollbacks and impact analysis.
-                    </p>
-</div>
-<!-- Source Trust Card (Large) -->
-<div class="md:col-span-2 p-10 bg-slate-900/50 border border-white/5 technical-glow relative overflow-hidden group">
-<div class="relative z-10 grid md:grid-cols-2 gap-8 items-center">
+</section>
+
+<!-- Human approval -->
+<section class="kf-section bg-[#09090B] border-y border-white/5">
+<div class="kf-container">
+<div class="grid lg:grid-cols-[0.8fr_1.2fr] gap-10 items-start">
 <div>
-<span class="font-label-mono text-label-mono text-primary uppercase block mb-4">Integrity Framework</span>
-<h3 class="font-headline-lg text-headline-lg text-white mb-4">Source Trust &amp; Ownership</h3>
-<p class="font-body-md text-on-surface-variant mb-6">
-                                Assign varying trust levels to data sources. Maintain explicit knowledge ownership to prevent IP contamination and ensure source attribution in every AI response.
-                            </p>
-<ul class="space-y-3">
-<li class="flex items-center gap-3 text-slate-300 font-label-sm">
-<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span>
-                                    Verified Institutional Sources
-                                </li>
-<li class="flex items-center gap-3 text-slate-300 font-label-sm">
-<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span>
-                                    Third-Party Data Verification
-                                </li>
-<li class="flex items-center gap-3 text-slate-300 font-label-sm">
-<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span>
-                                    Metadata Sovereignty Controls
-                                </li>
-</ul>
+<span class="kf-kicker mb-5">Human approval</span>
+<h2 class="kf-section-title mb-5">Human approval where it matters.</h2>
+<p class="kf-body-lg">KnowledgeFund should not imply uncontrolled autonomy. It should support different levels of action depending on risk.</p>
 </div>
+<div class="grid gap-4">
+<div class="kf-card p-5 flex gap-4"><span class="kf-number shrink-0">1</span><div><h3 class="text-white font-semibold mb-2">Draft only</h3><p class="text-slate-400">AI can prepare work, but a person must review and send.</p></div></div>
+<div class="kf-card p-5 flex gap-4"><span class="kf-number shrink-0">2</span><div><h3 class="text-white font-semibold mb-2">Recommend</h3><p class="text-slate-400">AI can suggest an action, decision, or update.</p></div></div>
+<div class="kf-card p-5 flex gap-4"><span class="kf-number shrink-0">3</span><div><h3 class="text-white font-semibold mb-2">Prepare</h3><p class="text-slate-400">AI can prepare a system input, report, or workflow step for review.</p></div></div>
+<div class="kf-card p-5 flex gap-4"><span class="kf-number shrink-0">4</span><div><h3 class="text-white font-semibold mb-2">Execute with approval</h3><p class="text-slate-400">AI-supported action can proceed after authorised approval.</p></div></div>
+<div class="kf-card p-5 flex gap-4"><span class="kf-number shrink-0">5</span><div><h3 class="text-white font-semibold mb-2">Execute within rules</h3><p class="text-slate-400">Low-risk repeatable actions can run within defined limits and retain evidence.</p></div></div>
 </div>
-</div>
-<!-- Human in the Loop Card -->
-<div class="p-8 bg-surface-container-low border border-white/5 hover:border-primary/30 transition-all group flex flex-col justify-between">
-<div>
-<div class="mb-6 w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full group-hover:bg-primary/20 transition-colors">
-<span class="material-symbols-outlined text-primary" data-icon="person_search">person_search</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-white mb-3">Human-in-the-Loop</h3>
-</div>
-<p class="font-body-md text-on-surface-variant leading-relaxed mb-6">
-                        Automated review cycles for critical outputs, ensuring that high-stakes decisions are always verified by domain experts.
-                    </p>
-<a class="text-primary font-label-mono text-label-mono uppercase flex items-center gap-2 group-hover:gap-4 transition-all" href="#">
-                        Learn More <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
-</a>
 </div>
 </div>
 </section>
-<!-- Evidence Capture Section -->
-<section class="py-32 px-8 bg-surface-container-lowest border-y border-white/5">
-<div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row items-center gap-24">
-<div class="flex-1 order-2 md:order-1">
-<div class="relative group">
-<div class="absolute -inset-6 rounded-full bg-primary/10 blur-3xl opacity-40"></div>
-<div class="relative overflow-hidden rounded-2xl border border-white/10 bg-surface-container-low shadow-2xl">
-<img alt="Automated evidence capture interface" class="w-full aspect-[16/10] object-cover grayscale opacity-90 contrast-125 transition-all duration-700 group-hover:grayscale-0 group-hover:opacity-100" data-alt="A high-tech institutional evidence capture concept with layered blue interfaces, audit signals, and secure intelligence architecture visualized across a wide dark frame." src="/stitch-redesign/high_tech_concept-wide.png"/>
-<div class="absolute inset-0 bg-gradient-to-tr from-[#09090B]/85 via-transparent to-primary/10"></div>
-<div class="absolute bottom-6 left-6 right-6 rounded-lg border border-white/10 bg-[#09090B]/70 p-5 backdrop-blur-xl">
-<div class="flex items-center justify-between gap-4">
-<span class="font-label-mono text-label-mono text-white uppercase">Evidence Ledger</span>
-<span class="font-label-mono text-[11px] text-primary uppercase">Verified</span>
+
+<!-- Evidence and ownership -->
+<section class="kf-section bg-[#131315]">
+<div class="kf-container">
+<div class="grid lg:grid-cols-2 gap-5">
+<div class="kf-card p-8">
+<span class="kf-kicker mb-5">Evidence</span>
+<h2 class="kf-section-title mb-5">Evidence-backed work.</h2>
+<p class="kf-body-lg mb-6">For governed AI to be trusted, organisations need to know what was used, changed, approved, and retained.</p>
+<ul class="grid sm:grid-cols-2 gap-3 text-slate-300"><li>source references</li><li>version history</li><li>review history</li><li>approval records</li><li>decision logs</li><li>action history</li><li>exceptions and unresolved issues</li></ul>
 </div>
-<div class="mt-4 h-1 rounded-full bg-white/10">
-<div class="h-full w-4/5 rounded-full bg-primary shadow-[0_0_18px_rgba(46,98,255,0.65)]"></div>
+<div class="kf-card p-8">
+<span class="kf-kicker mb-5">Ownership</span>
+<h2 class="kf-section-title mb-5">Clear ownership of business knowledge.</h2>
+<p class="kf-body-lg mb-6">Governance depends on knowing who owns the knowledge. KnowledgeFund should help organisations assign ownership to policies, procedures, templates, client context, workflows, and rules so knowledge does not become stale or unmanaged.</p>
+<ul class="grid sm:grid-cols-2 gap-3 text-slate-300"><li>domain owners</li><li>review cycles</li><li>approval status</li><li>change requests</li><li>retired content</li><li>trusted sources</li></ul>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="flex-1 order-1 md:order-2 space-y-8">
-<span class="font-label-mono text-label-mono text-primary uppercase block">System Verification</span>
-<h2 class="font-headline-lg text-headline-lg text-white">Automated Evidence Capture</h2>
-<p class="font-body-lg text-on-surface-variant leading-relaxed">
-                        Don't just audit—capture proof. Our system automatically archives the precise context, model version, and knowledge state for every enterprise AI interaction, creating a defensible record of governance in action.
-                    </p>
 </div>
 </div>
 </section>
-<!-- CTA Section -->
-<section class="py-48 px-8 text-center relative overflow-hidden">
-<div class="absolute inset-0 bg-primary/5 blur-[120px] rounded-full translate-y-1/2"></div>
-<div class="max-w-3xl mx-auto relative z-10">
-<h2 class="font-headline-xl text-headline-xl text-white mb-8">Ready to formalize your AI governance?</h2>
-<p class="font-body-lg text-on-surface-variant mb-12">
-                    Join the ranks of leading institutions deploying sovereign AI with the trust and safety required for high-stakes enterprise environments.
-                </p>
-<div class="flex flex-col sm:flex-row justify-center gap-4">
-<a class="bg-primary-container text-on-primary-container font-manrope font-bold px-8 py-4 rounded shadow-2xl hover:bg-blue-500 transition-all active:scale-95 flex items-center justify-center" href="mailto:knowledgefund@gmail.com">Contact Us</a>
+
+<!-- CTA -->
+<section class="kf-section bg-[#09090B]">
+<div class="kf-container">
+<div class="kf-card p-8 lg:p-12 text-center">
+<h2 class="kf-section-title mb-5">Trust depends on more than good prompts.</h2>
+<p class="kf-body-lg max-w-3xl mx-auto mb-8">KnowledgeFund is designed for organisations that need controls around knowledge, AI use, approvals, and evidence.</p>
+<a class="kf-button-primary" href="/trust">Explore trust and assurance</a>
 </div>
 </div>
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-slate-950 full-width py-12 border-t border-white/5">
-<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 px-8 max-w-screen-2xl mx-auto">
-<div class="col-span-2">
-<span class="text-lg font-bold text-white mb-4 block font-manrope">Knowledge Fund</span>
-<p class="font-manrope text-xs text-slate-500 max-w-xs mb-4">
-                    Architecting the infrastructure of trust for the era of sovereign intelligence.
-                </p>
-<p class="font-manrope text-xs text-slate-500">© 2026 Knowledge Fund. AI-Governed Excellence.</p>
-</div>
-<div>
-<h4 class="font-label-mono text-label-mono text-white mb-6 uppercase">Compliance</h4>
-<ul class="space-y-4">
-<li><a class="font-manrope text-xs text-slate-500 hover:text-white transition-colors" href="#">Privacy Policy</a></li>
-<li><a class="font-manrope text-xs text-slate-500 hover:text-white transition-colors" href="#">Terms of Service</a></li>
-<li><a class="font-manrope text-xs text-slate-500 hover:text-white transition-colors" href="#">SOC 2 Trust</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-label-mono text-label-mono text-white mb-6 uppercase">Security</h4>
-<ul class="space-y-4">
-<li><a class="font-manrope text-xs text-slate-500 hover:text-white transition-colors" href="#">ISO 27001</a></li>
-<li><a class="font-manrope text-xs text-slate-500 hover:text-white transition-colors" href="#">Security Architecture</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-label-mono text-label-mono text-white mb-6 uppercase">Resources</h4>
-<ul class="space-y-4">
-<li><a class="font-manrope text-xs text-slate-500 hover:text-white transition-colors" href="#">API Docs</a></li>
-<li><a class="font-manrope text-xs text-slate-500 hover:text-white transition-colors" href="#">Knowledge Base</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-label-mono text-label-mono text-white mb-6 uppercase">Contact</h4>
-<ul class="space-y-4">
-<li><a class="font-manrope text-xs text-slate-500 hover:text-white transition-colors" href="#">Support</a></li>
-<li><a class="font-manrope text-xs text-slate-500 hover:text-white transition-colors" href="#">Sales</a></li>
-</ul>
-</div>
-</div>
+<footer class="w-full border-t border-white/5 bg-[#09090B] flex flex-col items-center justify-center px-12 py-16 gap-4 font-manrope text-xs uppercase tracking-widest text-center">
+<span class="text-lg font-black text-slate-100">Knowledge Fund</span>
+<p class="text-slate-500 normal-case tracking-normal">© 2026 Knowledge Fund. All sovereign rights reserved.</p>
 </footer>
-</body></html>
+</body>
+</html>

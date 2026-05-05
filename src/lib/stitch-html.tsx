@@ -11,7 +11,7 @@ type StitchHtmlPageProps = {
 type StitchNavKey = "platform" | "governance" | "trust" | "methodology";
 
 const stitchNavItems: Array<{ href: string; key: StitchNavKey; label: string }> = [
-  { href: "/", key: "platform", label: "Platform" },
+  { href: "/platform", key: "platform", label: "Platform" },
   { href: "/governance", key: "governance", label: "Governance" },
   { href: "/trust", key: "trust", label: "Trust" },
   { href: "/methodology", key: "methodology", label: "Use Cases" },
@@ -76,7 +76,7 @@ function getSharedHeader(activePage?: StitchNavKey) {
   return `<!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-[#09090B]/80 backdrop-blur-xl border-b border-white/10 flex justify-between items-center px-8 h-16 max-w-full font-manrope text-sm tracking-tight">
 <div class="flex items-center gap-8">
-<span class="text-xl font-bold tracking-tighter text-slate-50 uppercase">Knowledge Fund</span>
+<a class="text-xl font-bold tracking-tighter text-slate-50 uppercase" href="/">Knowledge Fund</a>
 <div class="hidden md:flex gap-6">
 ${navMarkup}
 </div>
