@@ -36,7 +36,7 @@ export default function FinalCTA() {
 
             <div className="relative px-8 lg:px-14 py-14 lg:py-18">
               <span className="section-label mb-8 inline-flex">
-                Build your <span>Knowledge</span><span className="text-[#596FD2]">Fund</span>
+                Build your <span className="whitespace-nowrap"><span>Knowledge</span><span className="text-[#596FD2]">Fund</span></span>
               </span>
 
               <h2 className="text-3xl lg:text-4xl font-bold text-[#f0f4ff] mb-5 leading-tight">
