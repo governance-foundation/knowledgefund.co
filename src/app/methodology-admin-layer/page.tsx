@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import StitchHtmlPage from "@/lib/stitch-html";
 
 export const metadata: Metadata = {
-  title: "Methodology Admin Layer | Knowledge Fund",
+  title: "Methodology Admin Layer | KnowledgeFund",
   description:
-    "Knowledge Fund methodology for turning scattered knowledge into governed capability across the administrative layer of the business.",
+    "KnowledgeFund methodology for turning scattered knowledge into governed capability across the administrative layer of the business.",
 };
 
 export default function MethodologyAdminLayerPage() {

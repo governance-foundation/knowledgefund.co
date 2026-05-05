@@ -144,7 +144,7 @@ export default function HeroSection() {
             >
               Turn organisational knowledge into{" "}
               <span className="gradient-text">
-                secure, governed, mission-aligned action.
+                trusted, governed, evidence-backed work.
               </span>
             </motion.h1>
 

@@ -17,8 +17,13 @@ export default function Navigation() {
     <header className="fixed inset-x-0 top-0 z-50 h-10 border-b border-white/10 bg-[#09090b]/80 font-display backdrop-blur-xl lg:h-16">
       <div className="flex h-full w-full items-center justify-between" style={{ paddingInline: 32 }}>
         <div className="flex min-w-0 items-center gap-5 sm:gap-8">
-          <Link href="/" className="shrink-0 text-xs font-bold uppercase text-slate-50 lg:text-xl">
-            Knowledge Fund
+          <Link
+            href="/"
+            aria-label="KnowledgeFund"
+            className="shrink-0 text-xs font-extrabold tracking-[-0.045em] text-slate-50 lg:text-xl"
+          >
+            <span>Knowledge</span>
+            <span className="text-[#596FD2]">Fund</span>
           </Link>
 
           <nav className="hidden items-center gap-6 min-[720px]:flex">

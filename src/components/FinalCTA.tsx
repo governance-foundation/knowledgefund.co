@@ -42,7 +42,7 @@ export default function FinalCTA() {
               </h2>
               <p className="text-[#8892a4] text-base mb-8 leading-relaxed max-w-2xl mx-auto">
                 Start turning organisational knowledge into trusted answers, useful documents,
-                better workflows, safer automation, governed change, and mission-aligned action.
+                better workflows, safer automation, governed change, and evidence-backed action.
               </p>
 
               <div className="flex flex-wrap gap-2 justify-center mb-10">

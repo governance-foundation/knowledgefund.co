@@ -84,7 +84,7 @@ export default function WhyItMattersSection() {
           <p className="text-sm text-[#8892a4] leading-relaxed max-w-2xl mx-auto">
             <span className="text-[#f0f4ff] font-semibold">Without governed knowledge, automation creates faster fragmentation.</span>{" "}
             KnowledgeFund gives organisations a safer foundation for AI-powered work by connecting automation to governed,
-            secure, mission-aligned knowledge.
+            secure, governed knowledge.
           </p>
         </motion.div>
       </div>

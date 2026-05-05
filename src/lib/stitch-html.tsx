@@ -17,6 +17,8 @@ const stitchNavItems: Array<{ href: string; key: StitchNavKey; label: string }> 
   { href: "/methodology", key: "methodology", label: "Use Cases" },
 ];
 
+const wordmarkMarkup = '<span>Knowledge</span><span class="text-[#596FD2]">Fund</span>';
+
 function splitUrlSuffix(value: string) {
   const hashIndex = value.indexOf("#");
   const hash = hashIndex === -1 ? "" : value.slice(hashIndex);
@@ -76,7 +78,7 @@ function getSharedHeader(activePage?: StitchNavKey) {
   return `<!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-[#09090B]/80 backdrop-blur-xl border-b border-white/10 flex justify-between items-center px-8 h-16 max-w-full font-manrope text-sm tracking-tight">
 <div class="flex items-center gap-8">
-<a class="text-xl font-bold tracking-tighter text-slate-50 uppercase" href="/">Knowledge Fund</a>
+<a class="text-xl font-extrabold tracking-[-0.045em] text-slate-50" href="/" aria-label="KnowledgeFund">${wordmarkMarkup}</a>
 <div class="hidden md:flex gap-6">
 ${navMarkup}
 </div>
@@ -94,8 +96,8 @@ function normalizeHeader(body: string, activePage?: StitchNavKey) {
 function getSharedFooter() {
   return `<!-- Footer -->
 <footer class="w-full border-t border-white/5 bg-[#09090B] flex flex-col items-center justify-center px-12 py-16 gap-4 font-manrope text-xs uppercase tracking-widest text-center">
-<span class="text-lg font-black text-slate-100">Knowledge Fund</span>
-<p class="text-slate-500 normal-case tracking-normal">© 2026 Knowledge Fund. All sovereign rights reserved.</p>
+<span class="text-lg font-black normal-case tracking-[-0.035em] text-slate-100">${wordmarkMarkup}</span>
+<p class="text-slate-500 normal-case tracking-normal">© 2026 KnowledgeFund. All rights reserved.</p>
 </footer>`;
 }
 

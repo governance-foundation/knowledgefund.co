@@ -52,8 +52,8 @@ export default function ModelPage() {
               From scattered knowledge to governed capability.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-400">
-              KnowledgeFund gives organisations a repeatable lifecycle for turning latent information
-              into high-velocity operational intelligence without losing control.
+              KnowledgeFund gives organisations a repeatable lifecycle for turning scattered information
+              into governed business capability without losing control.
             </p>
           </div>
 

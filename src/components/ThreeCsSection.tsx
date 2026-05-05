@@ -27,7 +27,7 @@ const threeCs = [
   {
     accent: "C",
     word: "Coordination",
-    subhead: "Coordination turns shared work into mission-aligned action",
+    subhead: "Coordination turns shared work into governed action",
     description:
       "Coordination helps people align their actions, timing, responsibilities, dependencies, and handoffs so the organisation moves as one. It is the hardest of the three to achieve, and the most consequential. It requires that individuals, teams, and systems are not just informed and cooperative, but oriented toward the same outcomes.",
     detail: "People, systems, and AI can move in one direction because ownership, approval, trust, and change are governed.",

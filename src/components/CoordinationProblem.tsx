@@ -81,7 +81,7 @@ export default function CoordinationProblem() {
         >
           <p className="text-sm text-[#8892a4] leading-relaxed">
             KnowledgeFund helps organisations create the foundation for coordinated AI adoption by turning scattered knowledge into a{" "}
-            <span className="text-[#f0f4ff] font-medium">secure, governed, mission-aligned business asset.</span>
+            <span className="text-[#f0f4ff] font-medium">secure, governed business asset.</span>
           </p>
         </motion.div>
       </div>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import StitchHtmlPage from "@/lib/stitch-html";
 
 export const metadata: Metadata = {
-  title: "Governance | Knowledge Fund",
+  title: "Governance | KnowledgeFund",
   description: "How KnowledgeFund keeps AI-supported work controlled, approved, accountable, and evidence-backed.",
 };
 

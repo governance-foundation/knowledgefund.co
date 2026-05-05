@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import StitchHtmlPage from "@/lib/stitch-html";
 
 export const metadata: Metadata = {
-  title: "Use Cases | Knowledge Fund",
+  title: "Use Cases | KnowledgeFund",
   description:
     "Practical use cases for governed AI work across proposals, operations, support, marketing, reporting, and systems.",
 };

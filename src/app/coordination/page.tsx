@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import StitchHtmlPage from "@/lib/stitch-html";
 
 export const metadata: Metadata = {
-  title: "Mission Alignment | Knowledge Fund",
+  title: "Mission Alignment | KnowledgeFund",
   description: "Help your organisation understand, agree, and move in one direction.",
 };
 

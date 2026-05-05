@@ -6,11 +6,12 @@ export default function Footer() {
     >
       <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-center gap-4 text-center">
         <div className="flex flex-col items-center gap-4">
-          <span className="text-sm font-black uppercase text-slate-100 lg:text-lg">
-            Knowledge Fund
+          <span className="text-sm font-black tracking-[-0.035em] text-slate-100 lg:text-lg">
+            <span>Knowledge</span>
+            <span className="text-[#596FD2]">Fund</span>
           </span>
           <p className="text-center text-[9px] normal-case text-slate-500 min-[720px]:text-left lg:text-xs">
-            © 2026 Knowledge Fund. All sovereign rights reserved.
+            © 2026 KnowledgeFund. All rights reserved.
           </p>
         </div>
       </div>

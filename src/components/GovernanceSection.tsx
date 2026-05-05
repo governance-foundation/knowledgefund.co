@@ -5,7 +5,7 @@ import { useRef } from "react";
 
 const complianceCards = [
   {
-    title: "SOC 2 Type II",
+    title: "SOC 2-style controls",
     subtitle: "Designed to support alignment",
     description:
       "Supports evidence-driven controls for security, availability, confidentiality, processing integrity, and privacy. Includes audit trails, access control, change tracking, and operational evidence.",
@@ -17,7 +17,7 @@ const complianceCards = [
     ),
   },
   {
-    title: "ISO 27001",
+    title: "ISO 27001-style security",
     subtitle: "Designed to support alignment",
     description:
       "Supports information security management practices across people, process, technology, and organisational risk. Addresses information asset management, access control, security policies, and supplier controls.",
@@ -29,7 +29,7 @@ const complianceCards = [
     ),
   },
   {
-    title: "ISO 42001",
+    title: "ISO 42001-style governance",
     subtitle: "Designed to support alignment",
     description:
       "Supports responsible AI management practices for organisations adopting, governing, and monitoring AI systems. Covers AI governance, human oversight, accountability, risk assessment, and lifecycle management.",

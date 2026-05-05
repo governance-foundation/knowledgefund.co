@@ -85,7 +85,7 @@ export default function HowItWorksSection() {
             From scattered knowledge to governed capability.
           </h2>
           <p className="text-[#8892a4] max-w-xl mx-auto text-base leading-relaxed">
-            Five steps that turn what your organisation already knows into a trusted, governed, mission-aligned asset.
+            Five steps that turn what your organisation already knows into a trusted, governed business asset.
           </p>
         </motion.div>
 

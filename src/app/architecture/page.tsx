@@ -5,45 +5,45 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Governance & Trust Architecture — KnowledgeFund",
   description:
-    "KnowledgeFund trust architecture for sovereign intelligence, compliance, security, audit trails, and data sovereignty.",
+    "KnowledgeFund trust architecture for governed AI adoption, security planning, audit trails, and responsible deployment.",
 };
 
 const complianceCards = [
   {
     icon: "verified_user",
     label: "EST. PROTOCOL",
-    title: "ISO 42001",
-    body: "The first global standard for AI Management Systems. We implement rigorous ethical safeguards and risk management for every model in our orbit.",
+    title: "ISO 42001-style governance",
+    body: "Designed around AI management system thinking, including risk review, accountability, and responsible use practices.",
   },
   {
     icon: "policy",
     label: "TRUST SERVICES",
-    title: "SOC 2 Type II",
-    body: "Continuous operational monitoring ensuring data security, availability, and processing integrity. Verified by independent institutional audits.",
+    title: "SOC 2-style controls",
+    body: "Can align with control thinking around security, availability, confidentiality, and change management.",
   },
   {
     icon: "enhanced_encryption",
     label: "ISMS STANDARD",
-    title: "ISO 27001",
-    body: "Comprehensive information security management. Our technical perimeter is fortified by enterprise-grade cryptographic controls.",
+    title: "ISO 27001-style security",
+    body: "Designed to support information security management principles for access, assets, risks, and operating process.",
   },
 ];
 
 const securityItems = [
   {
     icon: "terminal",
-    title: "Immutable Audit Trails",
-    body: "Every interaction with our intelligence layers is cryptographically hashed and logged to a private ledge, ensuring a tamper-proof history of operations.",
+    title: "Reviewable Action History",
+    body: "Important interactions can retain source context, review history, approvals, and action records.",
   },
   {
     icon: "shield_with_heart",
-    title: "Zero-Trust Interaction",
-    body: "Identity is verified at every hop. We operate on the principle of least privilege, minimizing attack surfaces across the network.",
+    title: "Least-Privilege Access",
+    body: "Deployment patterns can support role-based access and limited permissions for sensitive knowledge and systems.",
   },
   {
     icon: "data_thresholding",
-    title: "Continuous Threat Synthesis",
-    body: "Real-time monitoring using adversarial AI to detect and neutralize potential vulnerabilities before they manifest as threats.",
+    title: "Risk Review",
+    body: "Higher-risk workflows can be reviewed before broader system access or automation is introduced.",
   },
 ];
 
@@ -57,12 +57,12 @@ export default function ArchitecturePage() {
               Institutional Trust Architecture
             </span>
             <h1 className="font-display text-[32px] font-semibold leading-[1.1] text-white lg:text-[48px]">
-              Governance for Sovereign Intelligence.
+              Governance for controlled AI adoption.
             </h1>
             <p className="mt-8 max-w-2xl font-body text-sm leading-[1.6] text-[#c3c5d8] lg:text-lg">
-              Ensuring the integrity of autonomous systems through a multi-layered compliance
-              framework and immutable audit trails. Knowledge Fund builds on the bedrock of absolute
-              data sovereignty.
+              Supporting controlled AI use through governance, access rules, review, and evidence
+              trails. KnowledgeFund is designed to help organisations adopt AI without giving up
+              accountability.
             </p>
           </div>
         </section>
@@ -132,7 +132,7 @@ export default function ArchitecturePage() {
             >
               <Image
                 src="/stitch-redesign/high-tech-concept-wide.png"
-                alt="Sovereign intelligence globe showing a secure technical trust network."
+                alt="Technical trust network showing controlled AI governance."
                 width={1344}
                 height={768}
                 sizes="(min-width: 1024px) 50vw, 100vw"
@@ -153,11 +153,12 @@ export default function ArchitecturePage() {
         <section style={{ marginBottom: 48 }}>
           <div style={{ marginBottom: 48 }}>
             <h2 className="font-display text-2xl font-medium leading-[1.2] text-white lg:text-[32px]">
-              Data Sovereignty
+              Data control and deployment
             </h2>
             <p className="mt-4 max-w-xl font-body text-xs leading-[1.5] text-[#c3c5d8] lg:text-[15px]">
-              Decoupling intelligence from infrastructure. Your data remains your asset, always
-              encrypted and geographically governed according to your jurisdiction.
+              Different organisations need different levels of control. Deployment patterns can
+              support staged adoption, defined access rules, and appropriate data handling for the
+              organisation&apos;s risk profile.
             </p>
           </div>
 
@@ -173,17 +174,17 @@ export default function ArchitecturePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-r from-[#2a2a2c] via-[#2a2a2c]/92 to-[#2a2a2c]/45" />
               <div className="relative z-10">
-                <h3 className="font-display text-lg font-medium text-white lg:text-2xl">Jurisdictional Control</h3>
+                <h3 className="font-display text-lg font-medium text-white lg:text-2xl">Deployment controls</h3>
                 <p className="mt-6 max-w-xl font-body text-xs leading-[1.5] text-[#c3c5d8] lg:text-[15px]">
-                  Select the precise legal jurisdiction for your data residency. Knowledge Fund
-                  adheres to G7 and EU data protection mandates natively.
+                  Define where knowledge is stored, who can access it, what systems can be
+                  connected, and which workflows need approval before expansion.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-4">
                   <span className="rounded bg-white/5 px-3 py-1 font-mono text-[11px] text-[#8d90a2]">
-                    REGION: EU-WEST-1
+                    PILOT: LIMITED SOURCES
                   </span>
                   <span className="rounded bg-white/5 px-3 py-1 font-mono text-[11px] text-[#8d90a2]">
-                    REGION: US-EAST-1
+                    REVIEW: BEFORE EXPANSION
                   </span>
                 </div>
               </div>
@@ -196,8 +197,8 @@ export default function ArchitecturePage() {
               <span className="material-symbols-outlined text-4xl text-[#2e62ff]" style={{ marginBottom: 16 }}>
                 encrypted
               </span>
-              <h3 className="font-mono text-[11px] font-medium uppercase text-white lg:text-[13px]">End-to-End</h3>
-              <p className="mt-2 text-xs text-[#c3c5d8]">AES-256 at rest & in transit.</p>
+              <h3 className="font-mono text-[11px] font-medium uppercase text-white lg:text-[13px]">Encryption planning</h3>
+              <p className="mt-2 text-xs text-[#c3c5d8]">Implementation may include encryption at rest and in transit.</p>
             </article>
 
             <article
@@ -207,8 +208,8 @@ export default function ArchitecturePage() {
               <span className="material-symbols-outlined text-4xl text-[#2e62ff]" style={{ marginBottom: 16 }}>
                 key
               </span>
-              <h3 className="font-mono text-[11px] font-medium uppercase text-white lg:text-[13px]">BYOK</h3>
-              <p className="mt-2 text-xs text-[#c3c5d8]">Bring your own keys capability.</p>
+              <h3 className="font-mono text-[11px] font-medium uppercase text-white lg:text-[13px]">Key management</h3>
+              <p className="mt-2 text-xs text-[#c3c5d8]">Deployment patterns can support appropriate key controls where required.</p>
             </article>
           </div>
         </section>

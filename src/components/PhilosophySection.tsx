@@ -21,7 +21,7 @@ export default function PhilosophySection() {
               The philosophy
             </span>
             <h2 className="text-3xl lg:text-4xl font-bold text-[#f0f4ff] mb-6 leading-tight">
-              Knowledge is a cooperative fund.
+              Knowledge is a managed business asset.
             </h2>
             <p className="text-[#8892a4] leading-relaxed mb-6">
               A fund is something contributed to, maintained, and drawn upon

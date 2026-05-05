@@ -20,6 +20,7 @@
   .kf-button-secondary { border: 1px solid rgba(255,255,255,0.14); color: #fff; }
   .kf-button-primary:hover { filter: brightness(1.1); }
   .kf-button-secondary:hover { background: rgba(255,255,255,0.06); }
+  .kf-detail summary::-webkit-details-marker { display: none; }
   @media (max-width: 768px) { .kf-container { width: min(100% - 32px, 1180px); } .kf-section { padding-block: 72px; } }
 </style>
 </head>
@@ -27,7 +28,7 @@
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-[#09090B]/80 backdrop-blur-xl border-b border-white/10 flex justify-between items-center px-8 h-16 max-w-full font-manrope text-sm tracking-tight">
 <div class="flex items-center gap-8">
-<span class="text-xl font-bold tracking-tighter text-slate-50 uppercase">Knowledge Fund</span>
+<span class="text-xl font-bold tracking-tighter text-slate-50">KnowledgeFund</span>
 <div class="hidden md:flex gap-6">
 <a class="text-slate-400 hover:text-white transition-colors" href="#">Platform</a>
 <a class="text-slate-400 hover:text-white transition-colors" href="#">Governance</a>
@@ -69,12 +70,12 @@
 <h2 class="kf-section-title">Everyday business work that can become governed workflows.</h2>
 </div>
 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-<div class="kf-card p-7"><h3 class="font-headline-md text-white mb-5">Sales and proposals</h3><ul class="space-y-3 text-slate-400 mb-6"><li>pitch preparation</li><li>tender responses</li><li>capability statements</li><li>proposal drafting</li><li>client-specific content</li><li>scope summaries</li><li>evidence packs</li></ul><p class="text-slate-300 leading-7">Teams prepare stronger responses faster while reusing approved company knowledge and retaining evidence of claims.</p></div>
-<div class="kf-card p-7"><h3 class="font-headline-md text-white mb-5">Operations and admin</h3><ul class="space-y-3 text-slate-400 mb-6"><li>reminders and follow-ups</li><li>job execution</li><li>workflow creation</li><li>meeting summaries</li><li>handovers</li><li>task coordination</li><li>internal updates</li></ul><p class="text-slate-300 leading-7">Routine coordination becomes more consistent, visible, and less dependent on memory or manual chasing.</p></div>
-<div class="kf-card p-7"><h3 class="font-headline-md text-white mb-5">Knowledge and support</h3><ul class="space-y-3 text-slate-400 mb-6"><li>internal knowledge retrieval</li><li>Slack or Teams-based answers</li><li>onboarding support</li><li>process guidance</li><li>decision history lookup</li><li>policy interpretation</li></ul><p class="text-slate-300 leading-7">Staff get faster answers from approved knowledge instead of relying on scattered documents or informal memory.</p></div>
-<div class="kf-card p-7"><h3 class="font-headline-md text-white mb-5">Marketing and digital</h3><ul class="space-y-3 text-slate-400 mb-6"><li>social posts</li><li>website updates</li><li>campaign briefs</li><li>content reviews</li><li>product or service descriptions</li><li>newsletter drafts</li></ul><p class="text-slate-300 leading-7">Marketing teams create and review content faster while staying aligned to brand, compliance, and approved messaging.</p></div>
-<div class="kf-card p-7"><h3 class="font-headline-md text-white mb-5">Governance and reporting</h3><ul class="space-y-3 text-slate-400 mb-6"><li>document review</li><li>policy checks</li><li>evidence packs</li><li>status reports</li><li>risk summaries</li><li>audit preparation</li><li>decision records</li></ul><p class="text-slate-300 leading-7">Governance work becomes easier to produce, review, trace, and maintain.</p></div>
-<div class="kf-card p-7"><h3 class="font-headline-md text-white mb-5">Systems and records</h3><ul class="space-y-3 text-slate-400 mb-6"><li>system inputs</li><li>system updates</li><li>data checks</li><li>change coordination</li><li>record alignment</li><li>CRM updates</li><li>reporting inputs</li></ul><p class="text-slate-300 leading-7">System updates become more controlled, reviewable, and connected to approved decisions.</p></div>
+<div class="kf-card p-7"><h3 class="font-headline-md text-white mb-5">Sales and proposals</h3><ul class="space-y-3 text-slate-400 mb-6"><li>pitch preparation</li><li>tender responses</li><li>proposal drafting</li><li>client-specific content</li><li>evidence packs</li></ul><p class="text-slate-300 leading-7">Teams prepare stronger responses faster while reusing approved company knowledge and retaining evidence of claims.</p></div>
+<div class="kf-card p-7"><h3 class="font-headline-md text-white mb-5">Operations and admin</h3><ul class="space-y-3 text-slate-400 mb-6"><li>reminders and follow-ups</li><li>workflow creation</li><li>meeting summaries</li><li>handovers</li><li>task coordination</li></ul><p class="text-slate-300 leading-7">Routine coordination becomes more consistent, visible, and less dependent on memory or manual chasing.</p></div>
+<div class="kf-card p-7"><h3 class="font-headline-md text-white mb-5">Knowledge and support</h3><ul class="space-y-3 text-slate-400 mb-6"><li>internal knowledge retrieval</li><li>Slack or Teams-based answers</li><li>onboarding support</li><li>process guidance</li><li>decision history lookup</li></ul><p class="text-slate-300 leading-7">Staff get faster answers from approved knowledge instead of relying on scattered documents or informal memory.</p></div>
+<div class="kf-card p-7"><h3 class="font-headline-md text-white mb-5">Marketing and digital</h3><ul class="space-y-3 text-slate-400 mb-6"><li>social posts</li><li>website updates</li><li>campaign briefs</li><li>content reviews</li><li>product or service descriptions</li></ul><p class="text-slate-300 leading-7">Marketing teams create and review content faster while staying aligned to brand, compliance, and approved messaging.</p></div>
+<div class="kf-card p-7"><h3 class="font-headline-md text-white mb-5">Governance and reporting</h3><ul class="space-y-3 text-slate-400 mb-6"><li>document review</li><li>policy checks</li><li>evidence packs</li><li>status reports</li><li>risk summaries</li></ul><p class="text-slate-300 leading-7">Governance work becomes easier to produce, review, trace, and maintain.</p></div>
+<div class="kf-card p-7"><h3 class="font-headline-md text-white mb-5">Systems and records</h3><ul class="space-y-3 text-slate-400 mb-6"><li>system inputs</li><li>system updates</li><li>data checks</li><li>change coordination</li><li>record alignment</li></ul><p class="text-slate-300 leading-7">System updates become more controlled, reviewable, and connected to approved decisions.</p></div>
 </div>
 </div>
 </section>
@@ -100,35 +101,44 @@
 <!-- Workflows -->
 <section class="kf-section bg-[#131315]">
 <div class="kf-container">
+<div class="max-w-3xl mb-10">
+<span class="kf-kicker mb-5">Optional examples</span>
+<h2 class="kf-section-title mb-5">Two workflows in practice.</h2>
+<p class="kf-body-lg">Open these examples when you want more detail. The main idea is simple: start with a repeatable workflow, apply rules, and keep the evidence.</p>
+</div>
 <div class="grid lg:grid-cols-2 gap-5">
-<div class="kf-card p-8">
-<span class="kf-kicker mb-5">Example workflow</span>
-<h2 class="kf-section-title mb-6">Tender response workflow.</h2>
-<div class="space-y-5 mb-7">
+<details class="kf-card kf-detail overflow-hidden">
+<summary class="list-none cursor-pointer p-6 lg:p-7 flex items-start justify-between gap-6">
+<div><span class="kf-kicker mb-4">Example workflow</span><h3 class="font-headline-md text-white mb-3">Tender response workflow</h3><p class="text-slate-400 leading-7">Draft, check, route, approve, and retain evidence for a tender response.</p></div>
+<span class="material-symbols-outlined text-primary">expand_more</span>
+</summary>
+<div class="border-t border-white/5 px-6 pb-7 lg:px-7">
+<div class="space-y-4 py-6">
 <div class="flex gap-4"><span class="kf-number shrink-0">1</span><p class="text-slate-300 leading-7">A team member asks KnowledgeFund to prepare a draft tender response.</p></div>
-<div class="flex gap-4"><span class="kf-number shrink-0">2</span><p class="text-slate-300 leading-7">KnowledgeFund retrieves approved company content, project examples, policies, credentials, and client-specific context.</p></div>
+<div class="flex gap-4"><span class="kf-number shrink-0">2</span><p class="text-slate-300 leading-7">KnowledgeFund retrieves approved company content, examples, policies, credentials, and client context.</p></div>
 <div class="flex gap-4"><span class="kf-number shrink-0">3</span><p class="text-slate-300 leading-7">It checks the request against rules for confidentiality, tone, claims, approvals, and evidence.</p></div>
-<div class="flex gap-4"><span class="kf-number shrink-0">4</span><p class="text-slate-300 leading-7">It drafts the response using approved source material.</p></div>
-<div class="flex gap-4"><span class="kf-number shrink-0">5</span><p class="text-slate-300 leading-7">It flags gaps, assumptions, risks, and missing evidence.</p></div>
-<div class="flex gap-4"><span class="kf-number shrink-0">6</span><p class="text-slate-300 leading-7">It routes the draft to the right person for review.</p></div>
-<div class="flex gap-4"><span class="kf-number shrink-0">7</span><p class="text-slate-300 leading-7">Approved content is stored for reuse.</p></div>
-<div class="flex gap-4"><span class="kf-number shrink-0">8</span><p class="text-slate-300 leading-7">A decision and evidence trail is retained.</p></div>
+<div class="flex gap-4"><span class="kf-number shrink-0">4</span><p class="text-slate-300 leading-7">It drafts the response, flags gaps, and routes it to the right person for review.</p></div>
+<div class="flex gap-4"><span class="kf-number shrink-0">5</span><p class="text-slate-300 leading-7">Approved content is stored for reuse and an evidence trail is retained.</p></div>
 </div>
 <p class="text-white font-semibold leading-7">Outcome: The team moves faster, the response is more consistent, and the organisation keeps control over what was used, changed, approved, and sent.</p>
 </div>
-<div class="kf-card p-8">
-<span class="kf-kicker mb-5">Example workflow</span>
-<h2 class="kf-section-title mb-6">Internal knowledge support workflow.</h2>
-<div class="space-y-5 mb-7">
+</details>
+<details class="kf-card kf-detail overflow-hidden">
+<summary class="list-none cursor-pointer p-6 lg:p-7 flex items-start justify-between gap-6">
+<div><span class="kf-kicker mb-4">Example workflow</span><h3 class="font-headline-md text-white mb-3">Internal knowledge support workflow</h3><p class="text-slate-400 leading-7">Answer staff questions from approved knowledge and raise review tasks when gaps appear.</p></div>
+<span class="material-symbols-outlined text-primary">expand_more</span>
+</summary>
+<div class="border-t border-white/5 px-6 pb-7 lg:px-7">
+<div class="space-y-4 py-6">
 <div class="flex gap-4"><span class="kf-number shrink-0">1</span><p class="text-slate-300 leading-7">A staff member asks a question in Slack, Teams, or another approved channel.</p></div>
 <div class="flex gap-4"><span class="kf-number shrink-0">2</span><p class="text-slate-300 leading-7">KnowledgeFund checks what knowledge sources the person is allowed to access.</p></div>
-<div class="flex gap-4"><span class="kf-number shrink-0">3</span><p class="text-slate-300 leading-7">It retrieves relevant approved material.</p></div>
-<div class="flex gap-4"><span class="kf-number shrink-0">4</span><p class="text-slate-300 leading-7">It answers with source context and flags uncertainty where needed.</p></div>
-<div class="flex gap-4"><span class="kf-number shrink-0">5</span><p class="text-slate-300 leading-7">If the answer exposes a gap or outdated content, it can raise a review task for the knowledge owner.</p></div>
-<div class="flex gap-4"><span class="kf-number shrink-0">6</span><p class="text-slate-300 leading-7">The interaction contributes to better maintained organisational knowledge over time.</p></div>
+<div class="flex gap-4"><span class="kf-number shrink-0">3</span><p class="text-slate-300 leading-7">It retrieves approved material and answers with source context.</p></div>
+<div class="flex gap-4"><span class="kf-number shrink-0">4</span><p class="text-slate-300 leading-7">It flags uncertainty and can raise a review task for the knowledge owner.</p></div>
+<div class="flex gap-4"><span class="kf-number shrink-0">5</span><p class="text-slate-300 leading-7">The interaction helps improve the quality and ownership of the knowledge base over time.</p></div>
 </div>
 <p class="text-white font-semibold leading-7">Outcome: Staff get useful answers faster, while the organisation improves the quality and ownership of its knowledge base.</p>
 </div>
+</details>
 </div>
 </div>
 </section>
@@ -149,8 +159,8 @@
 </main>
 <!-- Footer -->
 <footer class="w-full border-t border-white/5 bg-[#09090B] flex flex-col items-center justify-center px-12 py-16 gap-4 font-manrope text-xs uppercase tracking-widest text-center">
-<span class="text-lg font-black text-slate-100">Knowledge Fund</span>
-<p class="text-slate-500 normal-case tracking-normal">© 2026 Knowledge Fund. All sovereign rights reserved.</p>
+<span class="text-lg font-black text-slate-100">KnowledgeFund</span>
+<p class="text-slate-500 normal-case tracking-normal">© 2026 KnowledgeFund. All rights reserved.</p>
 </footer>
 </body>
 </html>

@@ -69,7 +69,7 @@ export default function AboutPage() {
             </p>
             <p>
               KnowledgeFund addresses the root cause: organisations need a cared-for, governed,
-              mission-aligned knowledge layer before automation can be trusted.
+              governed knowledge layer before automation can be trusted.
             </p>
           </div>
         </div>
@@ -78,7 +78,7 @@ export default function AboutPage() {
       <section className="kf-section">
         <div className="kf-container text-center">
           <h2 className="kf-display text-3xl font-semibold text-white md:text-4xl">
-            Knowledge is a cooperative fund.
+            Knowledge is a managed business asset.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl leading-7 text-slate-400">
             Contributed to, maintained, and drawn upon collectively, shared knowledge becomes the
