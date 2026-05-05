@@ -97,7 +97,7 @@ function getSharedFooter() {
   return `<!-- Footer -->
 <footer class="w-full border-t border-white/5 bg-[#09090B] flex flex-col items-center justify-center px-12 py-16 gap-4 font-manrope text-xs uppercase tracking-widest text-center">
 <span class="text-lg font-black normal-case tracking-[-0.035em] text-slate-100">${wordmarkMarkup}</span>
-<p class="text-slate-500 normal-case tracking-normal">© 2026 KnowledgeFund. All rights reserved.</p>
+<p class="self-stretch text-left text-slate-500 normal-case tracking-normal">© 2026 KnowledgeFund. All rights reserved.</p>
 </footer>`;
 }
 
