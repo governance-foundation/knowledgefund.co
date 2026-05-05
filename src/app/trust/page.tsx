@@ -10,7 +10,7 @@ export default function TrustPage() {
   return (
     <StitchHtmlPage
       activePage="trust"
-      localImages={["/stitch-redesign/knowledgefund.png"]}
+      localImages={["/stitch-redesign/knowledgefund-display.jpg"]}
       page="trust_governance"
       tintedImageIndexes={[0]}
     />
