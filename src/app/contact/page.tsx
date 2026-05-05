@@ -15,7 +15,7 @@ export default function ContactPage() {
         <div>
           <span className="kf-kicker">Get in touch</span>
           <h1 className="kf-display mt-6 text-4xl font-semibold leading-tight text-white md:text-6xl">
-            Build your KnowledgeFund.
+            Build your <span>Knowledge</span><span className="text-[#596FD2]">Fund</span>.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-8 text-slate-400">
             We work with a small number of organisations at a time. If you are serious about

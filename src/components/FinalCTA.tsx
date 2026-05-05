@@ -10,7 +10,7 @@ const pillars = [
   "Better workflows",
   "Safer automation",
   "Governed change",
-  "Mission-aligned action",
+  "Evidence-backed action",
 ];
 
 export default function FinalCTA() {
@@ -35,7 +35,9 @@ export default function FinalCTA() {
             <div className="absolute inset-0 border border-blue-500/15 rounded-2xl" />
 
             <div className="relative px-8 lg:px-14 py-14 lg:py-18">
-              <span className="section-label mb-8 inline-flex">Build your KnowledgeFund</span>
+              <span className="section-label mb-8 inline-flex">
+                Build your <span>Knowledge</span><span className="text-[#596FD2]">Fund</span>
+              </span>
 
               <h2 className="text-3xl lg:text-4xl font-bold text-[#f0f4ff] mb-5 leading-tight">
                 Build the fund your business already depends on.

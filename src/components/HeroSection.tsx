@@ -198,7 +198,7 @@ export default function HeroSection() {
               Governed ✓
             </div>
             <div className="absolute -bottom-3 -left-3 glass-panel-mid rounded-lg px-3 py-2 text-xs text-blue-300 font-medium border border-blue-500/20">
-              Mission-aligned ✓
+              Evidence-backed ✓
             </div>
           </motion.div>
         </div>
