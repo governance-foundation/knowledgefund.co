@@ -10,7 +10,7 @@ export default function GovernancePage() {
   return (
     <StitchHtmlPage
       activePage="governance"
-      localImages={["/stitch-redesign/knowledgefund-display.jpg"]}
+      localImages={["/stitch-redesign/knowledgefund-display.jpg", "/stitch-redesign/high_tech_concept-wide.png"]}
       page="ai_governance_trust_architecture"
     />
   );
