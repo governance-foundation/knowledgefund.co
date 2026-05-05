@@ -7,5 +7,11 @@ export const metadata: Metadata = {
 };
 
 export default function GovernancePage() {
-  return <StitchHtmlPage activePage="governance" page="ai_governance_trust_architecture" />;
+  return (
+    <StitchHtmlPage
+      activePage="governance"
+      localImages={["/stitch-redesign/knowledgefund-display.jpg"]}
+      page="ai_governance_trust_architecture"
+    />
+  );
 }
