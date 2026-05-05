@@ -1,114 +1,191 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en"><head>
+<html class="dark" lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500&amp;family=Space+Grotesk:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "tertiary": "#c6c6c7",
-                        "surface-bright": "#39393b",
-                        "on-primary-fixed-variant": "#0039b5",
-                        "error-container": "#93000a",
-                        "surface-container": "#201f22",
-                        "surface-container-lowest": "#0e0e10",
-                        "on-tertiary-fixed": "#1a1c1c",
-                        "primary-fixed": "#dce1ff",
-                        "surface-variant": "#353437",
-                        "on-tertiary-fixed-variant": "#454747",
-                        "inverse-on-surface": "#313032",
-                        "on-secondary-container": "#adb4ce",
-                        "on-error-container": "#ffdad6",
-                        "on-tertiary": "#2f3131",
-                        "on-secondary": "#283044",
-                        "secondary": "#bec6e0",
-                        "on-surface": "#e5e1e4",
-                        "tertiary-fixed-dim": "#c6c6c7",
-                        "primary-fixed-dim": "#b7c4ff",
-                        "secondary-fixed-dim": "#bec6e0",
-                        "surface-container-highest": "#353437",
-                        "on-surface-variant": "#c3c5d8",
-                        "on-secondary-fixed-variant": "#3f465c",
-                        "secondary-container": "#3f465c",
-                        "on-tertiary-container": "#f6f7f7",
-                        "surface-tint": "#b7c4ff",
-                        "surface-container-high": "#2a2a2c",
-                        "primary": "#b7c4ff",
-                        "on-primary": "#002682",
-                        "error": "#ffb4ab",
-                        "tertiary-fixed": "#e2e2e2",
-                        "primary-container": "#2e62ff",
-                        "on-error": "#690005",
-                        "tertiary-container": "#707171",
-                        "on-background": "#e5e1e4",
-                        "outline-variant": "#434656",
-                        "outline": "#8d90a2",
-                        "on-primary-container": "#f7f6ff",
-                        "on-primary-fixed": "#001552",
-                        "background": "#09090B",
-                        "on-secondary-fixed": "#131b2e",
-                        "surface-container-low": "#1c1b1d",
-                        "surface": "#131315",
-                        "secondary-fixed": "#dae2fd",
-                        "inverse-surface": "#e5e1e4",
-                        "surface-dim": "#131315",
-                        "inverse-primary": "#024cec"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
-                    },
-                    "spacing": {
-                        "container-max": "1440px",
-                        "unit": "4px",
-                        "gutter": "24px",
-                        "margin": "48px"
-                    },
-                    "fontFamily": {
-                        "headline-xl": ["Manrope"],
-                        "body-md": ["Inter"],
-                        "body-lg": ["Inter"],
-                        "headline-md": ["Manrope"],
-                        "label-sm": ["Inter"],
-                        "label-mono": ["Space Grotesk"],
-                        "headline-lg": ["Manrope"]
-                    },
-                    "fontSize": {
-                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "600"}],
-                        "body-md": ["15px", {"lineHeight": "1.5", "fontWeight": "400"}],
-                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
-                        "label-sm": ["12px", {"lineHeight": "1.0", "fontWeight": "500"}],
-                        "label-mono": ["13px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}],
-                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "500"}]
-                    }
-                },
-            },
-        }
-    </script>
 <style>
-        .glass-border {
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: inset 0 1px 0 0 rgba(46, 98, 255, 0.1);
+        body {
+            background: #131315;
         }
-        .text-glow {
-            text-shadow: 0 0 20px rgba(46, 98, 255, 0.3);
+
+        .home-mesh {
+            background-image:
+                radial-gradient(circle at 10% 8%, rgba(46, 98, 255, 0.18) 0%, transparent 32%),
+                radial-gradient(circle at 92% 18%, rgba(183, 196, 255, 0.08) 0%, transparent 36%),
+                linear-gradient(180deg, #09090B 0%, #131315 46%, #09090B 100%);
         }
-        .bg-mesh {
-            background-image: radial-gradient(circle at 20% 20%, rgba(46, 98, 255, 0.05) 0%, transparent 40%),
-                              radial-gradient(circle at 80% 80%, rgba(46, 98, 255, 0.05) 0%, transparent 40%);
+
+        .home-container {
+            width: min(100% - 48px, 1280px);
+            margin-inline: auto;
         }
+
+        .home-section {
+            padding-block: 112px;
+        }
+
+        .home-card {
+            background: rgba(28, 27, 29, 0.78);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 18px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.045);
+        }
+
+        .home-card-soft {
+            background: rgba(15, 23, 42, 0.46);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 18px;
+        }
+
+        .home-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #b7c4ff;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .home-kicker::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            background: #2e62ff;
+            box-shadow: 0 0 18px rgba(46, 98, 255, 0.82);
+        }
+
+        .home-title {
+            color: #ffffff;
+            font-family: Manrope, sans-serif;
+            font-size: clamp(42px, 6vw, 78px);
+            font-weight: 700;
+            letter-spacing: -0.065em;
+            line-height: 0.96;
+        }
+
+        .home-section-title {
+            color: #ffffff;
+            font-family: Manrope, sans-serif;
+            font-size: clamp(32px, 4vw, 52px);
+            font-weight: 650;
+            letter-spacing: -0.045em;
+            line-height: 1.05;
+        }
+
+        .home-body-lg {
+            color: #c3c5d8;
+            font-family: Inter, sans-serif;
+            font-size: 18px;
+            line-height: 1.65;
+        }
+
+        .home-button-primary,
+        .home-button-secondary {
+            align-items: center;
+            border-radius: 14px;
+            display: inline-flex;
+            font-family: Manrope, sans-serif;
+            font-size: 14px;
+            font-weight: 800;
+            gap: 10px;
+            justify-content: center;
+            min-height: 54px;
+            padding-inline: 24px;
+            transition: transform 160ms ease, border-color 160ms ease, filter 160ms ease, background 160ms ease;
+        }
+
+        .home-button-primary {
+            background: #2e62ff;
+            color: #f7f6ff;
+            box-shadow: 0 24px 80px rgba(46, 98, 255, 0.24);
+        }
+
+        .home-button-secondary {
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            color: #ffffff;
+        }
+
+        .home-button-primary:hover {
+            filter: brightness(1.1);
+        }
+
+        .home-button-secondary:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(183, 196, 255, 0.36);
+        }
+
+        .home-button-primary:active,
+        .home-button-secondary:active {
+            transform: scale(0.98);
+        }
+
+        .home-icon {
+            align-items: center;
+            background: rgba(46, 98, 255, 0.1);
+            border: 1px solid rgba(46, 98, 255, 0.22);
+            border-radius: 14px;
+            color: #b7c4ff;
+            display: inline-flex;
+            height: 44px;
+            justify-content: center;
+            width: 44px;
+        }
+
+        .home-pill {
+            align-items: center;
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 999px;
+            color: #c3c5d8;
+            display: inline-flex;
+            font-size: 12px;
+            gap: 8px;
+            line-height: 1;
+            padding: 9px 12px;
+        }
+
+        .home-number {
+            align-items: center;
+            background: rgba(46, 98, 255, 0.14);
+            border: 1px solid rgba(46, 98, 255, 0.32);
+            border-radius: 999px;
+            color: #ffffff;
+            display: inline-flex;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 12px;
+            height: 34px;
+            justify-content: center;
+            width: 34px;
+        }
+
+        .home-flow-line {
+            background: linear-gradient(180deg, rgba(46, 98, 255, 0.9), rgba(46, 98, 255, 0.08));
+            bottom: 0;
+            left: 16px;
+            position: absolute;
+            top: 40px;
+            width: 1px;
+        }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        @media (max-width: 768px) {
+            .home-section {
+                padding-block: 80px;
+            }
+
+            .home-container {
+                width: min(100% - 32px, 1280px);
+            }
         }
     </style>
 </head>
@@ -119,157 +196,385 @@
 <span class="text-xl font-bold tracking-tighter text-slate-50 uppercase">Knowledge Fund</span>
 <div class="hidden md:flex gap-6">
 <a class="text-[#2E62FF] font-semibold transition-colors" href="#">Platform</a>
-<a class="text-slate-400 hover:text-white transition-colors" href="#">Thesis</a>
-<a class="text-slate-400 hover:text-white transition-colors" href="#">Network</a>
-<a class="text-slate-400 hover:text-white transition-colors" href="#">Research</a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#">Governance</a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#">Trust</a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#">Use Cases</a>
 </div>
 </div>
 <div class="flex items-center gap-4">
 <a class="bg-primary-container text-on-primary-container px-5 py-2 rounded-lg font-semibold scale-95 active:scale-90 transition-transform" href="mailto:knowledgefund@gmail.com">Connect</a>
 </div>
 </nav>
-<main class="pt-16">
+<main class="pt-16 overflow-hidden">
 <!-- Hero Section -->
-<section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden px-gutter bg-mesh">
+<section class="relative min-h-[92vh] flex items-center home-mesh">
 <div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover opacity-10 grayscale" data-alt="A cinematic, high-end 3D abstract visualization of organizational intelligence and complex network structures. Shimmering data nodes and neural pathways forming a cohesive architectural lattice against a dark obsidian background. Subtle electric blue glows and soft atmospheric lighting accentuate the technical precision and premium enterprise aesthetic. Minimalist, sophisticated, and engineered for high-stakes institutional trust." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnbOQ38PbI5NcNFplImD8qn2wS_yVKKZPJoX4vOxk5WH2ZaMU9i-Y7zGKqaA-jfY0CJpEKIsRhc6br7QzTcTvfs4vk-pMl3HUmLQMMRBBOqa0wmHIk_IapDTx0YetlIDYR3PQCaEhSgSLCZ6VRoHJPVYQNdQU6p4PJRyx6a2BaueiuE0YfsDx32iD9G1OjVvu3Nf63t9db8F5ZRYc00Qj4FJ6brTrnPJKJICE_tfvjLGdX41FR6Vg6kht35A9vnSdkw8Gg7bRpFeo"/>
-<div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
+<img alt="Abstract governed AI operations network" class="h-full w-full object-cover opacity-10 grayscale" data-alt="A precise dark technical network visual representing governed business knowledge, controls, and evidence-backed automation." src="https://lh3.googleusercontent.com/aida-public/platform-hero-placeholder"/>
+<div class="absolute inset-0 bg-gradient-to-b from-[#09090B]/40 via-[#09090B]/62 to-[#131315]"></div>
 </div>
-<div class="relative z-10 max-w-5xl mx-auto text-center">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary-container/30 bg-primary-container/5 mb-8">
-<span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_#2E62FF]"></span>
-<span class="font-label-mono text-label-sm uppercase tracking-widest text-primary">System v2.0 Live</span>
-</div>
-<h1 class="font-headline-xl text-headline-xl text-white mb-6 tracking-tighter">
-                    Turn organizational knowledge into <br/><span class="text-glow text-primary">mission-aligned action.</span>
-</h1>
-<p class="font-body-lg text-body-lg text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
-                    The technical framework for institutional trust. Build the architecture that allows complex organizations to achieve precision-engineered consensus at scale.
-                </p>
-<div class="flex flex-col md:flex-row gap-4 justify-center">
-<a class="px-8 py-4 bg-primary-container text-on-primary-container font-semibold rounded-lg hover:brightness-110 transition-all scale-100 active:scale-95 flex items-center justify-center gap-2" href="mailto:knowledgefund@gmail.com">
-                        Join the Waitlist
-                        <span class="material-symbols-outlined text-lg">arrow_forward</span>
+<div class="home-container relative z-10 py-24">
+<div class="grid lg:grid-cols-[1.08fr_0.92fr] gap-14 items-center">
+<div>
+<span class="home-kicker mb-8">Business-owned AI operations</span>
+<h1 class="home-title max-w-5xl mb-7">Governed AI automation for the work your business runs on.</h1>
+<p class="home-body-lg max-w-3xl mb-7">
+KnowledgeFund turns scattered organisational knowledge into a trusted, governed layer that AI can use to answer questions, prepare documents, review content, update systems, trigger workflows, and support business operations safely.
+</p>
+<p class="font-manrope text-lg text-white font-semibold mb-10">Trusted knowledge. Controlled automation. Evidence-backed action.</p>
+<div class="flex flex-col sm:flex-row gap-4 mb-10">
+<a class="home-button-primary" href="mailto:knowledgefund@gmail.com?subject=Start%20with%20one%20governed%20workflow">
+Start with one governed workflow
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
 </a>
+<a class="home-button-secondary" href="#how-it-works">See how KnowledgeFund works</a>
+</div>
+<div class="grid sm:grid-cols-3 gap-3 max-w-3xl">
+<div class="home-pill"><span class="material-symbols-outlined text-sm text-primary">verified_user</span> Human approval where needed</div>
+<div class="home-pill"><span class="material-symbols-outlined text-sm text-primary">database</span> Approved source material</div>
+<div class="home-pill"><span class="material-symbols-outlined text-sm text-primary">history</span> Decision and action history</div>
 </div>
 </div>
-</section>
-<!-- Live Organization State Section -->
-<section class="py-margin px-gutter max-w-screen-container-max mx-auto">
-<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="home-card p-5 lg:p-6">
+<div class="rounded-2xl border border-white/10 bg-[#09090B]/72 p-5 shadow-2xl">
+<div class="flex items-center justify-between border-b border-white/10 pb-4 mb-5">
 <div>
-<span class="font-label-mono text-label-sm text-primary uppercase tracking-[0.2em] mb-4 block">Institutional Framework</span>
-<h2 class="font-headline-lg text-headline-lg text-white mb-8">Live Organization State</h2>
-<div class="space-y-12">
-<div class="group">
-<div class="flex items-start gap-4">
-<div class="w-10 h-10 rounded glass-border flex items-center justify-center text-primary group-hover:bg-primary/10 transition-colors">
-<span class="material-symbols-outlined">dataset</span>
+<p class="font-label-mono text-label-mono uppercase text-primary mb-2">Governed workflow</p>
+<h2 class="font-headline-md text-white">Tender response draft</h2>
 </div>
-<div>
-<h3 class="font-headline-md text-white mb-2">Understand</h3>
-<p class="text-slate-400 leading-relaxed">Aggregate fragmented context into a unified knowledge ledger. Eliminate information silos through autonomous semantic mapping.</p>
+<span class="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Review required</span>
 </div>
+<div class="space-y-3">
+<div class="home-card-soft p-4">
+<div class="flex items-center justify-between gap-4">
+<span class="text-white font-semibold">Approved source retrieval</span>
+<span class="text-xs text-primary">Complete</span>
 </div>
 </div>
-<div class="group">
-<div class="flex items-start gap-4">
-<div class="w-10 h-10 rounded glass-border flex items-center justify-center text-primary group-hover:bg-primary/10 transition-colors">
-<span class="material-symbols-outlined">account_tree</span>
-</div>
-<div>
-<h3 class="font-headline-md text-white mb-2">Agree</h3>
-<p class="text-slate-400 leading-relaxed">Scale consensus through verifiable governance loops. Implement high-integrity decision protocols that maintain sovereign audit trails.</p>
+<div class="home-card-soft p-4">
+<div class="flex items-center justify-between gap-4">
+<span class="text-white font-semibold">Confidentiality and claims check</span>
+<span class="text-xs text-primary">Passed</span>
 </div>
 </div>
-</div>
-<div class="group">
-<div class="flex items-start gap-4">
-<div class="w-10 h-10 rounded glass-border flex items-center justify-center text-primary group-hover:bg-primary/10 transition-colors">
-<span class="material-symbols-outlined">bolt</span>
-</div>
-<div>
-<h3 class="font-headline-md text-white mb-2">Move</h3>
-<p class="text-slate-400 leading-relaxed">Convert agreement into unified strategic inertia. Execute at the speed of collective intelligence with automated workflow routing.</p>
+<div class="home-card-soft p-4">
+<div class="flex items-center justify-between gap-4">
+<span class="text-white font-semibold">Draft routed to owner</span>
+<span class="text-xs text-slate-300">Pending approval</span>
 </div>
 </div>
 </div>
+<div class="mt-6 rounded-xl border border-primary/20 bg-primary/10 p-4">
+<p class="text-sm leading-6 text-slate-200">AI can draft, recommend, and coordinate. Sensitive actions stay controlled by rules, roles, evidence, and human approval.</p>
 </div>
 </div>
-<div class="relative">
-<div class="absolute -inset-4 bg-primary/5 blur-3xl rounded-full"></div>
-<div class="relative glass-border rounded-xl overflow-hidden bg-surface-container-lowest p-unit">
-<img class="w-full aspect-square object-cover rounded-lg" data-alt="A highly detailed technical visualization of a live organizational state. A complex mesh of glowing blue connections between various data nodes, representing live knowledge aggregation and institutional consensus. The aesthetic is clean, dark, and linear-inspired, utilizing thin hair-line borders and micro-glow effects to showcase sovereign intelligence. The lighting is low-key, focused on the central data architecture." src="https://lh3.googleusercontent.com/aida/ADBb0uiQLpvqUNgubMQevKknYPji61yzXgZQ3IfE3V9LlQD-71ngOqhV0qTe3esZpsDKMRWmCB5joTzwEbkxUSukMjDq0nTpv92D0hDHp7TyN1hF25i-LxYsFvIzzOWWW9ZuIN4PgiWJguCn8I4vvlvAE3Tfozcqspajn1xwHXVtmxdl-6A8qrP_gPyi5iE1MnBLJYub0aEIYU27uBGNtrYDLOChto9-XMb8WrDnN1gYcdbxJFZfqeGzmATaw_I"/>
 </div>
 </div>
 </div>
 </section>
-<!-- The Architecture of Governance -->
-<section class="py-margin px-gutter bg-surface-container-lowest border-y border-white/5">
-<div class="max-w-screen-container-max mx-auto">
-<div class="text-center mb-16">
-<h2 class="font-headline-lg text-headline-lg text-white mb-4">The Architecture of Governance</h2>
-<p class="text-slate-400 max-w-2xl mx-auto">Foundational pillars for sovereign organizational intelligence.</p>
+
+<!-- What KnowledgeFund Does -->
+<section class="home-section bg-[#131315]">
+<div class="home-container">
+<div class="max-w-3xl mb-14">
+<span class="home-kicker mb-5">What KnowledgeFund does</span>
+<h2 class="home-section-title mb-5">Turn existing knowledge into controlled, repeatable AI-supported work.</h2>
+<p class="home-body-lg">KnowledgeFund helps organisations use approved business knowledge to support real admin and operational work without losing control.</p>
 </div>
-<div class="grid md:grid-cols-2 gap-8">
-<div class="p-8 glass-border bg-background/40 hover:bg-background/60 transition-colors group">
-<div class="w-12 h-12 mb-6 text-primary flex items-center justify-center border border-primary/20 rounded-lg group-hover:shadow-[0_0_15px_rgba(46,98,255,0.2)]">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+<div class="home-card p-7">
+<span class="home-icon mb-6"><span class="material-symbols-outlined">question_answer</span></span>
+<h3 class="font-headline-md text-white mb-3">Trusted answers</h3>
+<p class="text-slate-400 leading-7">Give staff answers grounded in approved business knowledge, policies, documents, and operating context.</p>
 </div>
-<h4 class="font-headline-md text-white mb-4">Precision-Engineered Consensus</h4>
-<p class="text-slate-400 leading-relaxed font-body-md">
-                            Eliminate the ambiguity of legacy decision-making. Our consensus layer utilizes cryptographic verification to ensure that every institutional pivot is backed by verifiable stakeholder alignment and contextual truth.
-                        </p>
-<div class="mt-8 pt-8 border-t border-white/5">
-<ul class="space-y-3 font-label-mono text-xs text-slate-500 uppercase tracking-wider">
-<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary/40"></span> Multi-Factor Verification</li>
-<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary/40"></span> Dynamic Quorum Scaling</li>
+<div class="home-card p-7">
+<span class="home-icon mb-6"><span class="material-symbols-outlined">description</span></span>
+<h3 class="font-headline-md text-white mb-3">Document generation</h3>
+<p class="text-slate-400 leading-7">Draft proposals, reports, tenders, policies, procedures, client communications, and internal updates from governed source material.</p>
+</div>
+<div class="home-card p-7">
+<span class="home-icon mb-6"><span class="material-symbols-outlined">fact_check</span></span>
+<h3 class="font-headline-md text-white mb-3">Document review</h3>
+<p class="text-slate-400 leading-7">Review content against business rules, governance standards, risk requirements, tone, structure, and evidence.</p>
+</div>
+<div class="home-card p-7">
+<span class="home-icon mb-6"><span class="material-symbols-outlined">account_tree</span></span>
+<h3 class="font-headline-md text-white mb-3">Workflow automation</h3>
+<p class="text-slate-400 leading-7">Trigger reminders, approvals, notifications, handovers, escalations, and repeatable business processes.</p>
+</div>
+<div class="home-card p-7">
+<span class="home-icon mb-6"><span class="material-symbols-outlined">sync_alt</span></span>
+<h3 class="font-headline-md text-white mb-3">System updates</h3>
+<p class="text-slate-400 leading-7">Help update records, prepare inputs, coordinate changes, and keep business systems aligned with approved decisions.</p>
+</div>
+<div class="home-card p-7">
+<span class="home-icon mb-6"><span class="material-symbols-outlined">analytics</span></span>
+<h3 class="font-headline-md text-white mb-3">Reporting and evidence</h3>
+<p class="text-slate-400 leading-7">Create summaries, status updates, audit trails, evidence packs, decision records, and governance reports.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Coordination Problem -->
+<section class="home-section bg-[#09090B] border-y border-white/5">
+<div class="home-container">
+<div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-start">
+<div>
+<span class="home-kicker mb-5">The coordination problem</span>
+<h2 class="home-section-title mb-5">The problem is no longer access to AI. It is coordination.</h2>
+<p class="home-body-lg">Most organisations already have access to powerful AI tools. The harder problem is making sure those tools use the right knowledge, follow the right rules, involve the right people, and leave behind evidence of what happened.</p>
+</div>
+<div class="grid gap-5">
+<div class="home-card p-7">
+<h3 class="font-headline-md text-white mb-3">Fragmented knowledge</h3>
+<p class="text-slate-400 leading-7">The facts that matter are scattered across documents, chats, SaaS tools, spreadsheets, legacy systems, and people's heads.</p>
+</div>
+<div class="home-card p-7">
+<h3 class="font-headline-md text-white mb-3">Uncontrolled automation</h3>
+<p class="text-slate-400 leading-7">As teams add AI tools and agents, actions can overlap, records can diverge, and small automations can create business-wide side effects.</p>
+</div>
+<div class="home-card p-7">
+<h3 class="font-headline-md text-white mb-3">No governed change</h3>
+<p class="text-slate-400 leading-7">Policies are hard to encode, ownership is unclear, approvals are inconsistent, and changes in one system rarely propagate cleanly to another.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- KnowledgeFund Model -->
+<section class="home-section bg-[#131315]" id="how-it-works">
+<div class="home-container">
+<div class="max-w-4xl mb-14">
+<span class="home-kicker mb-5">The KnowledgeFund model</span>
+<h2 class="home-section-title mb-5">Knowledge, governance, and execution connected in one operating layer.</h2>
+<p class="home-body-lg">KnowledgeFund connects organisational knowledge, governance, and execution so AI-supported work can happen safely.</p>
+</div>
+<div class="grid lg:grid-cols-[0.85fr_1.15fr] gap-8 items-stretch">
+<div class="home-card overflow-hidden">
+<img alt="KnowledgeFund governance console" class="h-full min-h-[420px] w-full object-cover grayscale opacity-90" data-alt="A dark enterprise interface showing structured business knowledge, governance controls, workflow status, and evidence trails." src="https://lh3.googleusercontent.com/aida-public/knowledgefund-display-placeholder"/>
+</div>
+<div class="grid gap-5">
+<div class="home-card p-7">
+<div class="flex items-start gap-5">
+<span class="home-number">1</span>
+<div>
+<h3 class="font-headline-md text-white mb-3">Knowledge layer</h3>
+<p class="text-slate-400 leading-7 mb-5">Captures, structures, classifies, owns, approves, and maintains business knowledge.</p>
+<div class="flex flex-wrap gap-2">
+<span class="home-pill">policies</span><span class="home-pill">procedures</span><span class="home-pill">client context</span><span class="home-pill">project knowledge</span><span class="home-pill">templates</span><span class="home-pill">decision history</span><span class="home-pill">risks</span><span class="home-pill">obligations</span><span class="home-pill">operating rules</span>
+</div>
+</div>
+</div>
+</div>
+<div class="home-card p-7">
+<div class="flex items-start gap-5">
+<span class="home-number">2</span>
+<div>
+<h3 class="font-headline-md text-white mb-3">Governance layer</h3>
+<p class="text-slate-400 leading-7 mb-5">Controls how knowledge is used, who can approve changes, what AI can do, and where human review is required.</p>
+<div class="flex flex-wrap gap-2">
+<span class="home-pill">access control</span><span class="home-pill">trust levels</span><span class="home-pill">approval workflows</span><span class="home-pill">evidence requirements</span><span class="home-pill">policy checks</span><span class="home-pill">version history</span><span class="home-pill">audit trails</span><span class="home-pill">role-based permissions</span>
+</div>
+</div>
+</div>
+</div>
+<div class="home-card p-7">
+<div class="flex items-start gap-5">
+<span class="home-number">3</span>
+<div>
+<h3 class="font-headline-md text-white mb-3">Automation layer</h3>
+<p class="text-slate-400 leading-7 mb-5">Turns governed knowledge into business action.</p>
+<div class="flex flex-wrap gap-2">
+<span class="home-pill">answers</span><span class="home-pill">documents</span><span class="home-pill">reminders</span><span class="home-pill">reviews</span><span class="home-pill">reports</span><span class="home-pill">workflow triggers</span><span class="home-pill">system updates</span><span class="home-pill">job execution</span><span class="home-pill">website updates</span><span class="home-pill">pitch and tender preparation</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Business Use Cases -->
+<section class="home-section bg-[#09090B] border-y border-white/5">
+<div class="home-container">
+<div class="max-w-3xl mb-14">
+<span class="home-kicker mb-5">Business use cases</span>
+<h2 class="home-section-title mb-5">Use cases for everyday business work.</h2>
+<p class="home-body-lg">Start with the repetitive, knowledge-heavy work your team already does every week.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+<div class="home-card p-7">
+<h3 class="font-headline-md text-white mb-5">Sales and proposals</h3>
+<ul class="space-y-3 text-slate-400">
+<li>pitch preparation</li><li>tender responses</li><li>capability statements</li><li>client-specific proposals</li><li>pricing and scope summaries</li>
+</ul>
+</div>
+<div class="home-card p-7">
+<h3 class="font-headline-md text-white mb-5">Operations and admin</h3>
+<ul class="space-y-3 text-slate-400">
+<li>reminders and follow-ups</li><li>job execution</li><li>workflow creation</li><li>handovers</li><li>task coordination</li><li>meeting summaries</li>
+</ul>
+</div>
+<div class="home-card p-7">
+<h3 class="font-headline-md text-white mb-5">Knowledge and support</h3>
+<ul class="space-y-3 text-slate-400">
+<li>internal knowledge retrieval</li><li>Slack or Teams-based answers</li><li>onboarding support</li><li>process guidance</li><li>decision history lookup</li>
+</ul>
+</div>
+<div class="home-card p-7">
+<h3 class="font-headline-md text-white mb-5">Marketing and digital</h3>
+<ul class="space-y-3 text-slate-400">
+<li>social posts</li><li>website updates</li><li>campaign briefs</li><li>content reviews</li><li>product or service descriptions</li>
+</ul>
+</div>
+<div class="home-card p-7">
+<h3 class="font-headline-md text-white mb-5">Governance and reporting</h3>
+<ul class="space-y-3 text-slate-400">
+<li>document review</li><li>policy checks</li><li>evidence packs</li><li>status reports</li><li>risk summaries</li><li>audit preparation</li>
+</ul>
+</div>
+<div class="home-card p-7">
+<h3 class="font-headline-md text-white mb-5">Systems and records</h3>
+<ul class="space-y-3 text-slate-400">
+<li>system inputs</li><li>system updates</li><li>data checks</li><li>change coordination</li><li>record alignment</li>
 </ul>
 </div>
 </div>
-<div class="p-8 glass-border bg-background/40 hover:bg-background/60 transition-colors group">
-<div class="w-12 h-12 mb-6 text-primary flex items-center justify-center border border-primary/20 rounded-lg group-hover:shadow-[0_0_15px_rgba(46,98,255,0.2)]">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">encrypted</span>
 </div>
-<h4 class="font-headline-md text-white mb-4">Sovereign Data Storage</h4>
-<p class="text-slate-400 leading-relaxed font-body-md">
-                            Your institutional intelligence remains your own. Implement distributed ledger storage that ensures complete data sovereignty while maintaining high-frequency access for AI-driven synthesis and retrieval.
-                        </p>
-<div class="mt-8 pt-8 border-t border-white/5">
-<ul class="space-y-3 font-label-mono text-xs text-slate-500 uppercase tracking-wider">
-<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary/40"></span> End-to-End Encryption</li>
-<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary/40"></span> Zero-Knowledge Architecture</li>
-</ul>
+</section>
+
+<!-- Governance and Control -->
+<section class="home-section bg-[#131315]">
+<div class="home-container">
+<div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-start">
+<div>
+<span class="home-kicker mb-5">Governance and control</span>
+<h2 class="home-section-title mb-5">Built for control, not chaos.</h2>
+<p class="home-body-lg mb-8">KnowledgeFund is designed for organisations that want the benefits of AI without losing control of knowledge, approvals, risk, or accountability.</p>
+<div class="rounded-2xl border border-primary/30 bg-primary/10 p-7">
+<p class="font-headline-md text-white leading-snug">Governance is not the brake. Governance is how organisations move faster without losing control.</p>
+</div>
+</div>
+<div class="home-card p-7">
+<div class="grid sm:grid-cols-2 gap-4">
+<div class="flex gap-3"><span class="material-symbols-outlined text-primary">check_circle</span><p class="text-slate-300">Human approval where needed</p></div>
+<div class="flex gap-3"><span class="material-symbols-outlined text-primary">check_circle</span><p class="text-slate-300">Role-based access to sensitive knowledge</p></div>
+<div class="flex gap-3"><span class="material-symbols-outlined text-primary">check_circle</span><p class="text-slate-300">Source-grounded answers and outputs</p></div>
+<div class="flex gap-3"><span class="material-symbols-outlined text-primary">check_circle</span><p class="text-slate-300">Decision and action history</p></div>
+<div class="flex gap-3"><span class="material-symbols-outlined text-primary">check_circle</span><p class="text-slate-300">Clear ownership of knowledge domains</p></div>
+<div class="flex gap-3"><span class="material-symbols-outlined text-primary">check_circle</span><p class="text-slate-300">Rules for when AI can draft, recommend, update, or execute</p></div>
+<div class="flex gap-3"><span class="material-symbols-outlined text-primary">check_circle</span><p class="text-slate-300">Evidence trails for reviews, approvals, and changes</p></div>
+<div class="flex gap-3"><span class="material-symbols-outlined text-primary">check_circle</span><p class="text-slate-300">Alignment with ISO 27001, SOC 2, and emerging AI governance practices</p></div>
 </div>
 </div>
 </div>
 </div>
 </section>
+
+<!-- Example Workflow -->
+<section class="home-section bg-[#09090B] border-y border-white/5">
+<div class="home-container">
+<div class="grid lg:grid-cols-[0.82fr_1.18fr] gap-12 items-start">
+<div>
+<span class="home-kicker mb-5">Example workflow</span>
+<h2 class="home-section-title mb-5">Example: governed tender response workflow.</h2>
+<p class="home-body-lg">A concrete example of how KnowledgeFund moves from approved knowledge to controlled work output.</p>
+</div>
+<div class="home-card p-7">
+<div class="relative space-y-7">
+<div class="home-flow-line hidden sm:block"></div>
+<div class="relative flex gap-5"><span class="home-number shrink-0">1</span><p class="text-slate-300 leading-7">A team member asks KnowledgeFund to prepare a draft tender response.</p></div>
+<div class="relative flex gap-5"><span class="home-number shrink-0">2</span><p class="text-slate-300 leading-7">KnowledgeFund retrieves approved company content, project examples, policies, credentials, and client-specific context.</p></div>
+<div class="relative flex gap-5"><span class="home-number shrink-0">3</span><p class="text-slate-300 leading-7">It checks the request against rules for confidentiality, tone, claims, approvals, and evidence.</p></div>
+<div class="relative flex gap-5"><span class="home-number shrink-0">4</span><p class="text-slate-300 leading-7">It drafts the response using approved source material.</p></div>
+<div class="relative flex gap-5"><span class="home-number shrink-0">5</span><p class="text-slate-300 leading-7">It flags gaps, assumptions, risks, and missing evidence.</p></div>
+<div class="relative flex gap-5"><span class="home-number shrink-0">6</span><p class="text-slate-300 leading-7">It routes the draft to the right person for review.</p></div>
+<div class="relative flex gap-5"><span class="home-number shrink-0">7</span><p class="text-slate-300 leading-7">Approved content is stored for reuse.</p></div>
+<div class="relative flex gap-5"><span class="home-number shrink-0">8</span><p class="text-slate-300 leading-7">A decision and evidence trail is retained.</p></div>
+</div>
+<div class="mt-8 rounded-xl border border-white/10 bg-white/[0.04] p-6">
+<p class="font-semibold text-white leading-7">Outcome: The team moves faster, the response is more consistent, and the organisation keeps control over what was used, changed, approved, and sent.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Implementation Path -->
+<section class="home-section bg-[#131315]">
+<div class="home-container">
+<div class="max-w-3xl mb-14">
+<span class="home-kicker mb-5">Implementation path</span>
+<h2 class="home-section-title mb-5">Start small. Prove value. Expand safely.</h2>
+<p class="home-body-lg">KnowledgeFund does not require an organisation-wide transformation to begin. It starts with one governed workflow and grows from there.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+<div class="home-card p-7">
+<span class="home-number mb-6">1</span>
+<h3 class="font-headline-md text-white mb-3">Knowledge audit</h3>
+<p class="text-slate-400 leading-7">Identify the documents, policies, templates, systems, and decisions that matter most.</p>
+</div>
+<div class="home-card p-7">
+<span class="home-number mb-6">2</span>
+<h3 class="font-headline-md text-white mb-3">Governance model</h3>
+<p class="text-slate-400 leading-7">Define owners, access rules, approval pathways, trust levels, and evidence requirements.</p>
+</div>
+<div class="home-card p-7">
+<span class="home-number mb-6">3</span>
+<h3 class="font-headline-md text-white mb-3">Pilot workflows</h3>
+<p class="text-slate-400 leading-7">Start with one department, one knowledge domain, and three high-value admin workflows.</p>
+</div>
+<div class="home-card p-7">
+<span class="home-number mb-6">4</span>
+<h3 class="font-headline-md text-white mb-3">Controlled expansion</h3>
+<p class="text-slate-400 leading-7">Expand into more teams, systems, and automation use cases once value and controls are proven.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Why KnowledgeFund -->
+<section class="py-24 bg-[#09090B] border-y border-white/5">
+<div class="home-container">
+<div class="home-card p-8 lg:p-12 grid lg:grid-cols-[0.72fr_1.28fr] gap-10 items-start">
+<div>
+<span class="home-kicker mb-5">Why KnowledgeFund?</span>
+<h2 class="home-section-title">Knowledge is a business asset when it is owned, governed, and usable.</h2>
+</div>
+<div class="space-y-5 text-slate-300 leading-8 text-lg">
+<p>Most businesses already have the knowledge they need. The problem is that it is scattered, duplicated, outdated, unowned, and disconnected from execution.</p>
+<p>KnowledgeFund treats organisational knowledge as a managed business asset. It gives that knowledge structure, ownership, governance, and a safe path into AI-supported work.</p>
+<p>This is how organisations move from scattered information and disconnected tools to trusted knowledge, controlled automation, and evidence-backed action.</p>
+</div>
+</div>
+</div>
+</section>
+
 <!-- Final CTA -->
-<section class="py-margin px-gutter text-center relative overflow-hidden">
-<div class="absolute inset-0 bg-mesh opacity-50"></div>
-<div class="relative z-10 max-w-3xl mx-auto">
-<h2 class="font-headline-lg text-headline-lg text-white mb-6">Ready to engineer your organization's future?</h2>
-<p class="text-slate-400 mb-10 text-body-lg">Secure your position in the next generation of institutional intelligence.</p>
-<div class="flex justify-center">
-<a class="px-10 py-5 bg-white text-background font-bold rounded-lg hover:bg-slate-200 transition-all scale-100 active:scale-95" href="mailto:knowledgefund@gmail.com">
-                        Contact Us
-                    </a>
+<section class="home-section bg-[#131315] relative">
+<div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent"></div>
+<div class="home-container">
+<div class="relative overflow-hidden rounded-[28px] border border-primary/25 bg-[#09090B] p-8 lg:p-14 text-center shadow-[0_0_120px_rgba(46,98,255,0.12)]">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(46,98,255,0.22),transparent_48%)]"></div>
+<div class="relative z-10 max-w-4xl mx-auto">
+<span class="home-kicker mb-6">Controlled adoption</span>
+<h2 class="home-section-title mb-6">Start with one governed AI workflow.</h2>
+<p class="home-body-lg mb-10">Choose one repeatable, knowledge-heavy business process. KnowledgeFund helps turn it into a controlled AI-supported workflow with trusted inputs, clear rules, human approval, and evidence of what happened.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a class="home-button-primary" href="mailto:knowledgefund@gmail.com?subject=Start%20with%20one%20workflow">Start with one workflow</a>
+<a class="home-button-secondary" href="mailto:knowledgefund@gmail.com?subject=Discuss%20KnowledgeFund">Discuss KnowledgeFund</a>
+</div>
+</div>
 </div>
 </div>
 </section>
 </main>
 <!-- Footer -->
-<footer class="w-full border-t border-white/5 bg-[#09090B] flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8 font-manrope text-xs uppercase tracking-widest">
-<div class="flex flex-col items-center md:items-start gap-4">
+<footer class="w-full border-t border-white/5 bg-[#09090B] flex flex-col items-center justify-center px-12 py-16 gap-4 font-manrope text-xs uppercase tracking-widest text-center">
 <span class="text-lg font-black text-slate-100">Knowledge Fund</span>
 <p class="text-slate-500 normal-case tracking-normal">© 2026 Knowledge Fund. All sovereign rights reserved.</p>
-</div>
-<div class="flex gap-8">
-<a class="text-slate-500 hover:text-[#2E62FF] transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
-<a class="text-slate-500 hover:text-[#2E62FF] transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
-<a class="text-slate-500 hover:text-[#2E62FF] transition-colors opacity-80 hover:opacity-100" href="#">Security Architecture</a>
-<a class="text-slate-500 hover:text-[#2E62FF] transition-colors opacity-80 hover:opacity-100" href="mailto:knowledgefund@gmail.com">Contact</a>
-</div>
 </footer>
-</body></html>
+</body>
+</html>

@@ -101,30 +101,31 @@ tailwind.config = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://knowledgefund.co"),
-  title: "KnowledgeFund — Secure, governed, mission-aligned AI automation",
+  title: "KnowledgeFund - Governed AI automation for business operations",
   description:
-    "KnowledgeFund helps organisations care for their shared knowledge, align their people, and safely automate business work through secure, governed, mission-aligned AI.",
+    "KnowledgeFund turns approved business knowledge into controlled AI workflows for trusted answers, document generation, reviews, system updates, reporting, and evidence-backed action.",
   keywords: [
-    "knowledge management",
+    "governed AI automation",
     "AI governance",
     "enterprise AI",
-    "knowledge automation",
-    "organisational alignment",
+    "business knowledge automation",
+    "AI workflow automation",
+    "controlled AI operations",
   ],
   authors: [{ name: "KnowledgeFund" }],
   openGraph: {
-    title: "KnowledgeFund — Secure, governed, mission-aligned AI automation",
+    title: "KnowledgeFund - Governed AI automation for business operations",
     description:
-      "KnowledgeFund helps organisations care for their shared knowledge, align their people, and safely automate business work through secure, governed, mission-aligned AI.",
+      "KnowledgeFund turns approved business knowledge into controlled AI workflows for trusted answers, document generation, reviews, system updates, reporting, and evidence-backed action.",
     type: "website",
     url: "https://knowledgefund.co",
     siteName: "KnowledgeFund",
   },
   twitter: {
     card: "summary_large_image",
-    title: "KnowledgeFund — Secure, governed, mission-aligned AI automation",
+    title: "KnowledgeFund - Governed AI automation for business operations",
     description:
-      "KnowledgeFund helps organisations care for their shared knowledge, align their people, and safely automate business work through secure, governed, mission-aligned AI.",
+      "KnowledgeFund turns approved business knowledge into controlled AI workflows for trusted answers, document generation, reviews, system updates, reporting, and evidence-backed action.",
   },
 };
 
