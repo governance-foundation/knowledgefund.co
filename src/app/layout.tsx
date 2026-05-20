@@ -9,7 +9,7 @@ const themeScript = `
 })();
 `;
 
-const faviconPath = "/brand/knowledgefund-icon-mark-white-bg5.svg";
+const faviconsPath = "/brand/favicons";
 
 const tailwindCdnConfig = `
 tailwind.config = {
@@ -115,9 +115,17 @@ export const metadata: Metadata = {
     "controlled AI operations",
   ],
   authors: [{ name: "KnowledgeFund" }],
+  appleWebApp: {
+    title: "KnowledgeFund",
+  },
+  manifest: `${faviconsPath}/site.webmanifest`,
   icons: {
-    icon: [{ url: faviconPath, type: "image/svg+xml", sizes: "any" }],
-    shortcut: [{ url: faviconPath, type: "image/svg+xml", sizes: "any" }],
+    icon: [
+      { url: `${faviconsPath}/favicon-96x96.png`, type: "image/png", sizes: "96x96" },
+      { url: `${faviconsPath}/favicon.svg`, type: "image/svg+xml" },
+    ],
+    shortcut: [{ url: `${faviconsPath}/favicon.ico` }],
+    apple: [{ url: `${faviconsPath}/apple-touch-icon.png`, sizes: "180x180" }],
   },
   openGraph: {
     title: "KnowledgeFund - Governed AI automation for business operations",
