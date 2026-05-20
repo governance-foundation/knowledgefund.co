@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { bookingUrl, contactEmail, contactMailto } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Contact — KnowledgeFund",
@@ -21,16 +22,29 @@ export default function ContactPage() {
             We work with a small number of organisations at a time. If you are serious about
             governed AI adoption, we would like to hear from you.
           </p>
-          <div className="mt-8 rounded-md border border-white/10 bg-white/[0.03] p-5">
-            <p className="kf-mono text-xs uppercase text-slate-500">Direct email</p>
-            <a className="mt-2 block text-lg font-semibold text-white" href="mailto:knowledgefund@gmail.com">
-              knowledgefund@gmail.com
-            </a>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <div className="rounded-md border border-white/10 bg-white/[0.03] p-5">
+              <p className="kf-mono text-xs uppercase text-slate-500">Direct email</p>
+              <a className="mt-2 block text-lg font-semibold text-white" href={contactMailto}>
+                {contactEmail}
+              </a>
+            </div>
+            <div className="rounded-md border border-white/10 bg-white/[0.03] p-5">
+              <p className="kf-mono text-xs uppercase text-slate-500">Booking</p>
+              <a
+                className="mt-2 block text-lg font-semibold text-white"
+                href={bookingUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Book a discovery call
+              </a>
+            </div>
           </div>
         </div>
 
         <div className="kf-card p-6 md:p-8">
-          <form action="mailto:knowledgefund@gmail.com" method="post" encType="text/plain" className="space-y-6">
+          <form action={contactMailto} method="post" encType="text/plain" className="space-y-6">
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
                 <label htmlFor="first-name" className="kf-mono text-xs uppercase text-slate-400">

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { bookingUrl, contactMailto } from "@/lib/contact";
 
 const navLinks = [
   { href: "/", label: "Platform" },
@@ -46,18 +47,20 @@ export default function Navigation() {
         </div>
 
         <div className="flex items-center gap-3 sm:gap-4">
-          <Link
-            href="mailto:knowledgefund@gmail.com"
+          <a
+            href={contactMailto}
             className="hidden text-xs font-medium text-slate-400 transition-colors hover:text-white sm:inline-flex"
           >
-            Sign In
-          </Link>
-          <Link
-            href="mailto:knowledgefund@gmail.com"
+            Email
+          </a>
+          <a
+            href={bookingUrl}
+            target="_blank"
+            rel="noreferrer"
             className="stitch-nav-action"
           >
             Get Started
-          </Link>
+          </a>
         </div>
       </div>
     </header>

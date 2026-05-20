@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { bookingUrl } from "@/lib/contact";
 
 function KnowledgeGraph() {
   const nodes = [
@@ -163,11 +164,14 @@ export default function HeroSection() {
             </motion.p>
 
             <motion.div {...fadeUp(0.28)} className="flex flex-wrap gap-3 mb-8">
-              <Link href="/contact"
+              <a
+                href={bookingUrl}
+                target="_blank"
+                rel="noreferrer"
                 className="px-6 py-3 rounded-lg bg-[#3b82f6] hover:bg-[#2563eb] text-white font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/30 text-sm"
               >
                 Build your KnowledgeFund
-              </Link>
+              </a>
               <Link href="/model"
                 className="px-6 py-3 rounded-lg border border-white/10 hover:border-blue-400/30 text-[#f0f4ff] font-medium transition-all duration-200 hover:bg-white/5 text-sm"
               >
