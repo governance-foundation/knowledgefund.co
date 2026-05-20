@@ -1,8 +1,8 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import Link from "next/link";
 import { useRef } from "react";
+import { bookingUrl, contactMailto } from "@/lib/contact";
 
 const pillars = [
   "Trusted answers",
@@ -56,18 +56,20 @@ export default function FinalCTA() {
               </div>
 
               <div className="flex flex-wrap gap-4 justify-center">
-                <Link
-                  href="/contact"
+                <a
+                  href={bookingUrl}
+                  target="_blank"
+                  rel="noreferrer"
                   className="px-8 py-4 rounded-lg bg-[#3b82f6] hover:bg-[#2563eb] text-white font-semibold transition-all duration-200 hover:shadow-xl hover:shadow-blue-500/30 text-sm"
                 >
                   Start building your KnowledgeFund
-                </Link>
-                <Link
-                  href="/contact"
+                </a>
+                <a
+                  href={contactMailto}
                   className="px-8 py-4 rounded-lg border border-white/10 hover:border-blue-400/25 text-[#f0f4ff] font-medium transition-all duration-200 hover:bg-white/5 text-sm"
                 >
                   Talk to us about governed AI adoption
-                </Link>
+                </a>
               </div>
 
               <p className="mt-8 text-xs text-[#4b5568]">

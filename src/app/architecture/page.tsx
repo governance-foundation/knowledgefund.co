@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
+import { bookingUrl } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Governance & Trust Architecture — KnowledgeFund",
@@ -228,14 +228,16 @@ export default function ArchitecturePage() {
                 Discuss our governance architecture with a technical architect. We provide complete
                 transparency documentation for institutional partners.
               </p>
-              <Link
-                href="mailto:knowledgefund@gmail.com"
+              <a
+                href={bookingUrl}
+                target="_blank"
+                rel="noreferrer"
                 className="stitch-button-primary"
                 style={{ marginTop: 40 }}
               >
-                <span className="material-symbols-outlined">mail</span>
-                Contact Architecture Team
-              </Link>
+                <span className="material-symbols-outlined">calendar_month</span>
+                Book Architecture Call
+              </a>
             </div>
           </div>
         </section>

@@ -1,5 +1,6 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
+import { bookingUrl } from "@/lib/contact";
 
 type StitchHtmlPageProps = {
   page: string;
@@ -84,7 +85,7 @@ ${navMarkup}
 </div>
 </div>
 <div class="flex items-center gap-4">
-<a class="bg-primary-container text-on-primary-container px-5 py-2 rounded-lg font-semibold scale-95 active:scale-90 transition-transform" href="mailto:knowledgefund@gmail.com">Connect</a>
+<a class="bg-primary-container text-on-primary-container px-5 py-2 rounded-lg font-semibold scale-95 active:scale-90 transition-transform" href="${bookingUrl}" target="_blank" rel="noreferrer">Connect</a>
 </div>
 </nav>`;
 }
@@ -109,6 +110,13 @@ function normalizeFooter(body: string) {
   }
 
   return `${body}\n${getSharedFooter()}`;
+}
+
+function normalizeContactLinks(body: string) {
+  return body.replace(
+    /href="mailto:knowledgefund@gmail\.com(?:\?subject=[^"]*)?"/g,
+    `href="${bookingUrl}" target="_blank" rel="noreferrer"`,
+  );
 }
 
 function replaceImages(body: string, localImages: string[], tintedImageIndexes: number[]) {
@@ -166,7 +174,9 @@ function getStitchBody(
   }
 
   const pageStyles = getPageStyles(html);
-  const bodyMarkup = normalizeFooter(normalizeHeader(replaceImages(body, localImages, tintedImageIndexes), activePage));
+  const bodyMarkup = normalizeContactLinks(
+    normalizeFooter(normalizeHeader(replaceImages(body, localImages, tintedImageIndexes), activePage)),
+  );
 
   return makeRootUrlsRelative(`${pageStyles}\n${bodyMarkup}`, page);
 }

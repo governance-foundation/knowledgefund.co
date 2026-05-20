@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { bookingUrl } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "The Model — KnowledgeFund",
@@ -142,12 +142,14 @@ export default function ModelPage() {
           <h2 className="kf-display text-3xl font-semibold text-white md:text-4xl">
             Build the fund your business already depends on.
           </h2>
-          <Link
-            href="/contact"
+          <a
+            href={bookingUrl}
+            target="_blank"
+            rel="noreferrer"
             className="mt-8 inline-flex rounded-md bg-[#2e62ff] px-7 py-3 text-sm font-bold text-white"
           >
             Request a technical briefing
-          </Link>
+          </a>
         </div>
       </section>
     </>

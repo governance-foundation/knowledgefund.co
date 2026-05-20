@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { bookingUrl } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "About — KnowledgeFund",
@@ -84,9 +84,14 @@ export default function AboutPage() {
             Contributed to, maintained, and drawn upon collectively, shared knowledge becomes the
             asset that lets people and AI systems work together effectively.
           </p>
-          <Link href="/contact" className="mt-8 inline-flex rounded-md bg-[#2e62ff] px-7 py-3 text-sm font-bold text-white">
+          <a
+            href={bookingUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-8 inline-flex rounded-md bg-[#2e62ff] px-7 py-3 text-sm font-bold text-white"
+          >
             Talk to us
-          </Link>
+          </a>
         </div>
       </section>
     </>
