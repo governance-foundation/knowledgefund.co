@@ -9,6 +9,8 @@ const themeScript = `
 })();
 `;
 
+const faviconPath = "/brand/knowledgefund-icon-mark-white-bg5.svg";
+
 const tailwindCdnConfig = `
 tailwind.config = {
   darkMode: "class",
@@ -113,6 +115,10 @@ export const metadata: Metadata = {
     "controlled AI operations",
   ],
   authors: [{ name: "KnowledgeFund" }],
+  icons: {
+    icon: [{ url: faviconPath, type: "image/svg+xml", sizes: "any" }],
+    shortcut: [{ url: faviconPath, type: "image/svg+xml", sizes: "any" }],
+  },
   openGraph: {
     title: "KnowledgeFund - Governed AI automation for business operations",
     description:
